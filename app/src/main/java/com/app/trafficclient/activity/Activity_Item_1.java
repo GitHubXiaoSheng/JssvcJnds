@@ -54,7 +54,7 @@ public class Activity_Item_1 extends AppCompatActivity {
 
     }
 
-    void initView(){
+void initView(){
         tv_accountbalance=findViewById(R.id.tv_account_balance);
         edt_rechargemoney=findViewById(R.id.tv_recharge_money);
         spinner_carnumber=findViewById(R.id.spinner_rechanrge);
@@ -67,38 +67,37 @@ public class Activity_Item_1 extends AppCompatActivity {
         carnumberadapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,carlist);
         carnumberadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_carnumber.setAdapter(carnumberadapter);
-        spinner_carnumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                chehao=carlist.get(i);
-            }
+       spinner_carnumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+           @Override
+           public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+               chehao=carlist.get(i);
+           }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+           @Override
+           public void onNothingSelected(AdapterView<?> adapterView) {
 
-            }
-        });
-        btn_query.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
-            }
-        });
-        btn_rechanrge.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String money = edt_rechargemoney.getText().toString().trim();
-                recharge(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1),money);
-                http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
-            }
-        });
+           }
+       });
+       btn_query.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
+           }
+       });
+       btn_rechanrge.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               String money = edt_rechargemoney.getText().toString().trim();
+               recharge(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1),money);
+           }
+       });
     }
 
-    void http(String str){
-        JSONObject jsonObject=new JSONObject();
-        try {
-            jsonObject.put("CarId",str);
-            jsonObject.put("UserName","user1");
+void http(String str){
+    JSONObject jsonObject=new JSONObject();
+    try {
+        jsonObject.put("CarId",str);
+        jsonObject.put("UserName","user1");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -108,21 +107,15 @@ public class Activity_Item_1 extends AppCompatActivity {
             public void onResponse(JSONObject jsonObject) {
                 try {
                     Log.d("返回信息", jsonObject.getString("Balance"));
-                    tv_accountbalance.setText(jsonObject.getString("Balance"));
-                    edt_rechargemoney.setText("");
+                  tv_accountbalance.setText(jsonObject.getString("Balance"));
+                  edt_rechargemoney.setText("");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError volleyError) {
-
-            }
-        });
+        },null);
     }
-    void recharge(final String chehao, final String money){
-
+    void recharge(final String chehao,final String money){
         JSONObject jsonObject=new JSONObject();
         try {
             jsonObject.put("CarId",chehao);
@@ -131,20 +124,35 @@ public class Activity_Item_1 extends AppCompatActivity {
             HttpRequest.post("SetCarAccountRecharge", jsonObject.toString(), new Response.Listener<JSONObject>() {
                 @Override
                 public void onResponse(JSONObject jsonObject) {
-                    ContentValues values=new ContentValues();
-                    values.put("chehao",chehao);
-                    values.put("jine",money);
-                    values.put("caozuoren","yws");
-                    SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
-                    Date date=new Date(System.currentTimeMillis());
-                    values.put("time",simpleDateFormat.format(date));
-                    database.insert("chongzhi",null,values);
+
+                    try {
+                        jsonObject.put("CarId",chehao);
+                        jsonObject.put("Money",money);
+                        jsonObject.put("UserName","user1");
+                        HttpRequest.post("SetCarAccountRecharge", jsonObject.toString(), new Response.Listener<JSONObject>() {
+                            @Override
+                            public void onResponse(JSONObject jsonObject) {
+                                ContentValues values=new ContentValues();
+                                values.put("chehao",chehao);
+                                values.put("jine",money);
+                                values.put("caozuoren","yws");
+                                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
+                                Date date=new Date(System.currentTimeMillis());
+                                values.put("time",simpleDateFormat.format(date));
+                                database.insert("chongzhi",null,values);
+                                http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
+                            }
+                        },null);
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
                     http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
                 }
             },null);
         } catch (JSONException e) {
             e.printStackTrace();
         }
+    }
     }
 
 }
