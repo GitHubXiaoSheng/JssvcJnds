@@ -64,7 +64,6 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
 
     private void jiangxuPaixu() {
 
-
         for (int i = 0; i < chongzhiList.size(); i++) {
             chongzhiList.get(i).setXuhao((i+1)+"");
         }
