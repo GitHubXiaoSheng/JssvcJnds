@@ -11,10 +11,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.app.trafficclient.MainActivity;
 import com.app.trafficclient.R;
+import com.app.trafficclient.util.HttpRequest;
+import com.app.trafficclient.util.Shared;
 import com.app.trafficclient.util.UrlBean;
 import com.app.trafficclient.util.Util;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class LoginActivity extends Activity {
@@ -68,31 +75,31 @@ public class LoginActivity extends Activity {
 			public void onClick(View v) {
 				final String account = accountET.getText().toString();
 				String pwd = pwdET.getText().toString();
-				startActivity(new Intent(LoginActivity.this,MainActivity.class));
-				finish();
-//				HttpRequest.post("user_login", "{\"UserName\":\"" + account + "\",\"UserPwd\": \"" + pwd + "\"}",
-//					new Response.Listener<JSONObject>() {
-//						@Override
-//						public void onResponse(JSONObject jsonObject) {
-//							String role = null;
-//							try {
-//							   role =  jsonObject.getString("UserRole");
-//							} catch (JSONException e) {
-//								e.printStackTrace();
-//							}
-////                                //R01:普通用户，R02：一般管理员，R03：超级管理员
-//							Shared.edit(LoginActivity.this).putString("role",role).putString("username",account).apply();
-//							startActivity(new Intent(LoginActivity.this,MainActivity.class));
-//							finish();
-//
-//						}
-//					},
-//					new Response.ErrorListener() {
-//						@Override
-//						public void onErrorResponse(VolleyError volleyError) {
-//							Toast.makeText(LoginActivity.this, "登录失败，用户名或密码错误", Toast.LENGTH_SHORT).show();
-//						}
-//					});
+//				startActivity(new Intent(LoginActivity.this,MainActivity.class));
+//				finish();
+				HttpRequest.post("user_login", "{\"UserName\":\"" + account + "\",\"UserPwd\": \"" + pwd + "\"}",
+					new Response.Listener<JSONObject>() {
+						@Override
+						public void onResponse(JSONObject jsonObject) {
+							String role = null;
+							try {
+							   role =  jsonObject.getString("UserRole");
+							} catch (JSONException e) {
+								e.printStackTrace();
+							}
+//                                //R01:普通用户，R02：一般管理员，R03：超级管理员
+							Shared.edit(LoginActivity.this).putString("role",role).putString("username",account).apply();
+							startActivity(new Intent(LoginActivity.this, MainActivity.class));
+							finish();
+
+						}
+					},
+					new Response.ErrorListener() {
+						@Override
+						public void onErrorResponse(VolleyError volleyError) {
+							Toast.makeText(LoginActivity.this, "登录失败，用户名或密码错误", Toast.LENGTH_SHORT).show();
+						}
+					});
 
 			}
 		});
