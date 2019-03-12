@@ -12,7 +12,7 @@ import com.app.trafficclient.R;
 
 import java.util.List;
 
-public class ZzjChongzhiAdapter extends ArrayAdapter {
+public class ZzjChongzhiAdapter extends ArrayAdapter<ZzjChongzhi> {
 
     private int resourceId;
 

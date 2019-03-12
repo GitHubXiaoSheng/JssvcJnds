@@ -2,6 +2,7 @@ package com.app.trafficclient;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -38,6 +39,9 @@ import java.util.HashMap;
 
 public class MainActivity extends AppCompatActivity {
 
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private SQLiteDatabase db;
+
     private SlidingPaneLayout slidepanel;
     private ViewPager mViewPager;
     BottomNavigationView navigation;
@@ -56,6 +60,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(MainActivity.this, MySQLiteOpenHelper.DBNAME, null, 1);
+        db = mySQLiteOpenHelper.getWritableDatabase();
+
         slidepanel = (SlidingPaneLayout) findViewById(R.id.slidingPL);
 
         listView = (ListView) findViewById(R.id.listView1);
