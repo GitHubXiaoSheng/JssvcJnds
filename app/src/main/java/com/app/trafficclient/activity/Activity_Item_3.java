@@ -1,5 +1,7 @@
 package com.app.trafficclient.activity;
 
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,11 +12,14 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.app.trafficclient.MySQLiteOpenHelper;
 import com.app.trafficclient.R;
 import com.app.trafficclient.adapter.ZzjChongzhi;
 import com.app.trafficclient.adapter.ZzjChongzhiAdapter;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Activity_Item_3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -30,10 +35,14 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
 
     private TextView textView;
 
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private SQLiteDatabase db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_layout_3);
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(Activity_Item_3.this, MySQLiteOpenHelper.DBNAME, null, 1);
 
         textView = findViewById(R.id.zzj_textView_NoDatatishi);
 
@@ -62,8 +71,22 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
         });
     }
 
-    private void jiangxuPaixu() {
-
+    private void shengxuPaixu() {
+        db = mySQLiteOpenHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from chongzhi", null);
+        if (cursor.moveToFirst()) {
+            do {
+                ZzjChongzhi zzjChongzhi = new ZzjChongzhi("", cursor.getString(cursor.getColumnIndex("chehao")), cursor.getString(cursor.getColumnIndex("jine")), cursor.getString(cursor.getColumnIndex("caozuoren")), cursor.getString(cursor.getColumnIndex("time")));
+                chongzhiList.add(zzjChongzhi);
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        Collections.sort(chongzhiList, new Comparator<ZzjChongzhi>() {
+            @Override
+            public int compare(ZzjChongzhi t0, ZzjChongzhi t1) {
+                return t0.getChongzhishijian().compareTo(t1.getChongzhishijian());
+            }
+        });
         for (int i = 0; i < chongzhiList.size(); i++) {
             chongzhiList.get(i).setXuhao((i+1)+"");
         }
@@ -78,8 +101,22 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
         listView.setAdapter(chongzhiAdapter);
     }
 
-    private void shengxuPaixu() {
-
+    private void jiangxuPaixu() {
+        db = mySQLiteOpenHelper.getWritableDatabase();
+        Cursor cursor = db.rawQuery("select * from chongzhi", null);
+        if (cursor.moveToFirst()) {
+            do {
+                ZzjChongzhi zzjChongzhi = new ZzjChongzhi("", cursor.getString(cursor.getColumnIndex("chehao")), cursor.getString(cursor.getColumnIndex("jine")), cursor.getString(cursor.getColumnIndex("caozuoren")), cursor.getString(cursor.getColumnIndex("time")));
+                chongzhiList.add(zzjChongzhi);
+            } while (cursor.moveToNext());
+        }
+        db.close();
+        Collections.sort(chongzhiList, new Comparator<ZzjChongzhi>() {
+            @Override
+            public int compare(ZzjChongzhi t0, ZzjChongzhi t1) {
+                return t1.getChongzhishijian().compareTo(t0.getChongzhishijian());
+            }
+        });
         for (int i = 0; i < chongzhiList.size(); i++) {
             chongzhiList.get(i).setXuhao((i+1)+"");
         }
