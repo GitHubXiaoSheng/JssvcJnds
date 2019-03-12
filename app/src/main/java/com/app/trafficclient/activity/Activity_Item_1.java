@@ -134,7 +134,7 @@ void http(String str){
                                 values.put("chehao",chehao);
                                 values.put("jine",money);
                                 values.put("caozuoren","yws");
-                                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
+                                SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy.MM.dd HH:mm:ss");
                                 Date date=new Date(System.currentTimeMillis());
                                 values.put("time",simpleDateFormat.format(date));
                                 database.insert("chongzhi",null,values);
