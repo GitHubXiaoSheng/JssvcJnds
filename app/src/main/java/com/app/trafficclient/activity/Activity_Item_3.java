@@ -72,6 +72,7 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
     }
 
     private void shengxuPaixu() {
+        chongzhiList.clear();
         db = mySQLiteOpenHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from chongzhi", null);
         if (cursor.moveToFirst()) {
@@ -102,6 +103,7 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
     }
 
     private void jiangxuPaixu() {
+        chongzhiList.clear();
         db = mySQLiteOpenHelper.getWritableDatabase();
         Cursor cursor = db.rawQuery("select * from chongzhi", null);
         if (cursor.moveToFirst()) {
