@@ -14,14 +14,14 @@ import org.json.JSONObject;
  */
 public class HttpRequest {
     public static void post(String name, String param, Response.Listener<JSONObject>listener,Response.ErrorListener errorListener){
-        String url="http://192.168.1.10:8088/transportservice/action/"+name+".do";
+        String url="http://192.168.0.106:8088/transportservice/action/"+name+".do";
         JsonObjectRequest request=new JsonObjectRequest(1,url,param,listener,errorListener);
         MyApplication.queue.add(request);
 
     }
 
     public static void bitmap(String name, Response.Listener<Bitmap>listener,Response.ErrorListener errorListener){
-        String url="http://192.168.1.10:8088/transportservice"+name;
+        String url="http://192.168.0.106:8088/transportservice"+name;
         ImageRequest request=new ImageRequest(url,listener,0,0, ImageView.ScaleType.FIT_XY, Bitmap.Config.ARGB_8888,errorListener);
         MyApplication.queue.add(request);
     }
