@@ -1,12 +1,17 @@
-package com.app.trafficclient.activity;
+package com.app.trafficclient.fragment;
+
 
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -23,7 +28,7 @@ import java.text.SimpleDateFormat;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class Activity_Item_5 extends AppCompatActivity {
+public class Fragment_item_5 extends Fragment {
 
     private LinearLayout linearLayout_1,linearLayout_2,linearLayout_3,linearLayout_4,linearLayout_5,linearLayout_6;
     private TextView textView_1,textView_2,textView_3,textView_4,textView_5,textView_6;
@@ -35,11 +40,15 @@ public class Activity_Item_5 extends AppCompatActivity {
     private ContentValues values_1,values_2;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_layout_5);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_item_layout_5, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
         initView();
-        mySQLiteOpenHelper = new MySQLiteOpenHelper(Activity_Item_5.this, MySQLiteOpenHelper.DBNAME, null, 1);
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(getContext(), MySQLiteOpenHelper.DBNAME, null, 1);
         db = mySQLiteOpenHelper.getWritableDatabase();
 
         new Timer().schedule(new TimerTask() {
@@ -48,7 +57,6 @@ public class Activity_Item_5 extends AppCompatActivity {
                 addData();
             }
         },0,3000);
-
     }
 
     private void addData() {
@@ -174,17 +182,18 @@ public class Activity_Item_5 extends AppCompatActivity {
     }
 
     private void initView() {
-        linearLayout_1 = findViewById(R.id.zzj_hezi_1);
-        linearLayout_2 = findViewById(R.id.zzj_hezi_2);
-        linearLayout_3 = findViewById(R.id.zzj_hezi_3);
-        linearLayout_4 = findViewById(R.id.zzj_hezi_4);
-        linearLayout_5 = findViewById(R.id.zzj_hezi_5);
-        linearLayout_6 = findViewById(R.id.zzj_hezi_6);
-        textView_1 = findViewById(R.id.zzj_textView_yuan_1);
-        textView_2 = findViewById(R.id.zzj_textView_yuan_2);
-        textView_3 = findViewById(R.id.zzj_textView_yuan_3);
-        textView_4 = findViewById(R.id.zzj_textView_yuan_4);
-        textView_5 = findViewById(R.id.zzj_textView_yuan_5);
-        textView_6 = findViewById(R.id.zzj_textView_yuan_6);
+        linearLayout_1 = getActivity().findViewById(R.id.zzj_hezi_1);
+        linearLayout_2 = getActivity().findViewById(R.id.zzj_hezi_2);
+        linearLayout_3 = getActivity().findViewById(R.id.zzj_hezi_3);
+        linearLayout_4 = getActivity().findViewById(R.id.zzj_hezi_4);
+        linearLayout_5 = getActivity().findViewById(R.id.zzj_hezi_5);
+        linearLayout_6 = getActivity().findViewById(R.id.zzj_hezi_6);
+        textView_1 = getActivity().findViewById(R.id.zzj_textView_yuan_1);
+        textView_2 = getActivity().findViewById(R.id.zzj_textView_yuan_2);
+        textView_3 = getActivity().findViewById(R.id.zzj_textView_yuan_3);
+        textView_4 = getActivity().findViewById(R.id.zzj_textView_yuan_4);
+        textView_5 = getActivity().findViewById(R.id.zzj_textView_yuan_5);
+        textView_6 = getActivity().findViewById(R.id.zzj_textView_yuan_6);
     }
+
 }

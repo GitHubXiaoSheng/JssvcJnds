@@ -22,17 +22,14 @@ import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.app.trafficclient.activity.Activity_Item_1;
-import com.app.trafficclient.activity.Activity_Item_3;
-import com.app.trafficclient.activity.Activity_Item_4;
-import com.app.trafficclient.activity.Activity_Item_5;
-import com.app.trafficclient.activity.Activity_Item_6;
-import com.app.trafficclient.activity.Activity_Item_7;
-import com.app.trafficclient.activity.Activity_Item_8;
-import com.app.trafficclient.activity.Activity_Item_9;
 import com.app.trafficclient.fragment.DesignFragment;
-import com.app.trafficclient.fragment.MainContentFragment;
+import com.app.trafficclient.fragment.Fragment_item_1;
 import com.app.trafficclient.fragment.Fragment_item_2;
+import com.app.trafficclient.fragment.Fragment_item_3;
+import com.app.trafficclient.fragment.Fragment_item_4;
+import com.app.trafficclient.fragment.Fragment_item_5;
+import com.app.trafficclient.fragment.Fragment_item_6;
+import com.app.trafficclient.fragment.MainContentFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -130,27 +127,22 @@ public class MainActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
                 switch (arg2) {
                     case 0:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_1.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码1",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_1()).commit();
                         break;
                     case 1:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_2()).commit();
                         break;
                     case 2:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_3.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码3",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_3()).commit();
                         break;
                     case 3:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_4.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码4",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_4()).commit();
                         break;
                     case 4:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_5.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码5",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_5()).commit();
                         break;
                     case 5:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_6.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码6",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_6()).commit();
                         break;
                     case 6:
                         startActivity(new Intent(MainActivity.this, Activity_Item_7.class));

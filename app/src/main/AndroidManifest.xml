@@ -13,9 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activity.Activity_Item_9"></activity>
-        <activity android:name=".activity.Activity_Item_8" />
-        <activity android:name=".activity.Activity_Item_7" />
         <activity
             android:name=".GuideActivity"
             android:screenOrientation="landscape"
@@ -37,21 +34,6 @@
         <activity
             android:name=".login.RegActivity"
             android:label="@string/app_title"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Activity_Item_1"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Activity_Item_3"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Activity_Item_4"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Activity_Item_5"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.Activity_Item_6"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
