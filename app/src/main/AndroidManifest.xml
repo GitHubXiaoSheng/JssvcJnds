@@ -42,9 +42,6 @@
             android:name=".activity.Activity_Item_1"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.Activity_Item_2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".activity.Activity_Item_3"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity

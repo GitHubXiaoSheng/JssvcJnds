@@ -23,7 +23,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.app.trafficclient.activity.Activity_Item_1;
-import com.app.trafficclient.activity.Activity_Item_2;
 import com.app.trafficclient.activity.Activity_Item_3;
 import com.app.trafficclient.activity.Activity_Item_4;
 import com.app.trafficclient.activity.Activity_Item_5;
@@ -33,7 +32,7 @@ import com.app.trafficclient.activity.Activity_Item_8;
 import com.app.trafficclient.activity.Activity_Item_9;
 import com.app.trafficclient.fragment.DesignFragment;
 import com.app.trafficclient.fragment.MainContentFragment;
-import com.app.trafficclient.fragment.TrafficMangFragment;
+import com.app.trafficclient.fragment.Fragment_item_2;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -135,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this,"这是程序代码1",Toast.LENGTH_LONG).show();
                         break;
                     case 1:
-                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new TrafficMangFragment()).commit();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_2()).commit();
                         break;
                     case 2:
                         startActivity(new Intent(MainActivity.this, Activity_Item_3.class));
