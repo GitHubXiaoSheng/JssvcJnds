@@ -1,7 +1,6 @@
 package com.app.trafficclient;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,7 +19,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.app.trafficclient.fragment.DesignFragment;
 import com.app.trafficclient.fragment.Fragment_item_1;
@@ -29,6 +27,9 @@ import com.app.trafficclient.fragment.Fragment_item_3;
 import com.app.trafficclient.fragment.Fragment_item_4;
 import com.app.trafficclient.fragment.Fragment_item_5;
 import com.app.trafficclient.fragment.Fragment_item_6;
+import com.app.trafficclient.fragment.Fragment_item_7;
+import com.app.trafficclient.fragment.Fragment_item_8;
+import com.app.trafficclient.fragment.Fragment_item_9;
 import com.app.trafficclient.fragment.MainContentFragment;
 
 import java.util.ArrayList;
@@ -145,16 +146,13 @@ public class MainActivity extends AppCompatActivity {
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_6()).commit();
                         break;
                     case 6:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_7.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码7",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_7()).commit();
                         break;
                     case 7:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_8.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码8",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_8()).commit();
                         break;
                     case 8:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_9.class));
-                        Toast.makeText(MainActivity.this,"这是创意题目",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_9()).commit();
                         break;
                     case 9:    //退出
                         exitAppDialog();
