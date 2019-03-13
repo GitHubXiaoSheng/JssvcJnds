@@ -33,6 +33,7 @@ import com.app.trafficclient.activity.Activity_Item_8;
 import com.app.trafficclient.activity.Activity_Item_9;
 import com.app.trafficclient.fragment.DesignFragment;
 import com.app.trafficclient.fragment.MainContentFragment;
+import com.app.trafficclient.fragment.TrafficMangFragment;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -134,8 +135,7 @@ public class MainActivity extends AppCompatActivity {
                         Toast.makeText(MainActivity.this,"这是程序代码1",Toast.LENGTH_LONG).show();
                         break;
                     case 1:
-                        startActivity(new Intent(MainActivity.this, Activity_Item_2.class));
-                        Toast.makeText(MainActivity.this,"这是程序代码2",Toast.LENGTH_LONG).show();
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new TrafficMangFragment()).commit();
                         break;
                     case 2:
                         startActivity(new Intent(MainActivity.this, Activity_Item_3.class));

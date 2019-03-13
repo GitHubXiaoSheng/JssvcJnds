@@ -47,6 +47,8 @@ public class LoginActivity extends Activity {
 		// TODO Auto-generated method stub
 		accountET = (EditText) findViewById(R.id.accountET);
 		pwdET = (EditText) findViewById(R.id.pwdET);
+		accountET.setText("user1");
+		pwdET.setText("123456");
 		loginBtn = (Button) findViewById(R.id.loginBtn);
 		regBtn = (Button) findViewById(R.id.regBtn);
 		settingBtn = (Button) findViewById(R.id.setting);
