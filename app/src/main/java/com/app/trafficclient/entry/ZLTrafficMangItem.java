@@ -1,12 +1,12 @@
 package com.app.trafficclient.entry;
 
-public class TrafficMangItem {
+public class ZLTrafficMangItem {
     private String road;
     private String redTime;
     private String yellowTime;
     private String greenTime;
 
-    public TrafficMangItem(String road, String redTime, String yellowTime, String greenTime) {
+    public ZLTrafficMangItem(String road, String redTime, String yellowTime, String greenTime) {
         this.road = road;
         this.redTime = redTime;
         this.yellowTime = yellowTime;

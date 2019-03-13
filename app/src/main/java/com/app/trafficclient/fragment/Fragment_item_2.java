@@ -15,9 +15,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.app.trafficclient.MyApplication;
 import com.app.trafficclient.R;
-import com.app.trafficclient.adapter.TrafficMangAdapter;
-import com.app.trafficclient.entry.TrafficMangItem;
-import com.app.trafficclient.usebean.TrafficConfig;
+import com.app.trafficclient.adapter.ZLTrafficMangAdapter;
+import com.app.trafficclient.entry.ZLTrafficMangItem;
+import com.app.trafficclient.usebean.ZLTrafficConfig;
 import com.app.trafficclient.util.HttpRequest;
 import com.google.gson.Gson;
 
@@ -35,8 +35,8 @@ public class Fragment_item_2 extends Fragment {
     private Button queryBtn;
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
-    private TrafficMangAdapter adapter;
-    private List<TrafficMangItem> trafficList;
+    private ZLTrafficMangAdapter adapter;
+    private List<ZLTrafficMangItem> trafficList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_item_layout_2, container, false);
@@ -53,7 +53,7 @@ public class Fragment_item_2 extends Fragment {
         manager = new LinearLayoutManager(MyApplication.appContext);
         recyclerView.setLayoutManager(manager);
         trafficList = new ArrayList<>();
-        adapter = new TrafficMangAdapter(trafficList);
+        adapter = new ZLTrafficMangAdapter(trafficList);
         recyclerView.setAdapter(adapter);
     }
 
@@ -71,9 +71,9 @@ public class Fragment_item_2 extends Fragment {
         HttpRequest.post("GetTrafficLightConfigAction", param, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
-                TrafficConfig config = new Gson().fromJson(jsonObject.toString(),TrafficConfig.class);
+                ZLTrafficConfig config = new Gson().fromJson(jsonObject.toString(), ZLTrafficConfig.class);
                 if(config.getRESULT().equals("S")){
-                    trafficList.add(new TrafficMangItem(String.valueOf(road),config.getRedTime(),config.getYellowTime(),config.getGreenTime()));
+                    trafficList.add(new ZLTrafficMangItem(String.valueOf(road),config.getRedTime(),config.getYellowTime(),config.getGreenTime()));
                     initData(road+1);
                 }else {
                     adapter.notifyDataSetChanged();
@@ -91,65 +91,65 @@ public class Fragment_item_2 extends Fragment {
     private void sort(int type){
         switch (type){
             case 0:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(item.getRoad()).compareTo(Integer.valueOf(t1.getRoad()));
                     }
                 });
                 break;
             case 1:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(t1.getRoad()).compareTo(Integer.valueOf(item.getRoad()));
                     }
                 });
                 break;
             case 2:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(item.getRedTime()).compareTo(Integer.valueOf(t1.getRedTime()));
                     }
                 });
                 break;
             case 3:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(t1.getRedTime()).compareTo(Integer.valueOf(item.getRedTime()));
                     }
                 });
                 break;
             case 4:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(item.getYellowTime()).compareTo(Integer.valueOf(t1.getYellowTime()));
                     }
                 });
                 break;
             case 5:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(t1.getYellowTime()).compareTo(Integer.valueOf(item.getYellowTime()));
                     }
                 });
                 break;
             case 6:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(item.getGreenTime()).compareTo(Integer.valueOf(t1.getGreenTime()));
                     }
                 });
                 break;
             case 7:
-                Collections.sort(trafficList, new Comparator<TrafficMangItem>() {
+                Collections.sort(trafficList, new Comparator<ZLTrafficMangItem>() {
                     @Override
-                    public int compare(TrafficMangItem item, TrafficMangItem t1) {
+                    public int compare(ZLTrafficMangItem item, ZLTrafficMangItem t1) {
                         return new Integer(t1.getGreenTime()).compareTo(Integer.valueOf(item.getGreenTime()));
                     }
                 });

@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.app.trafficclient.MyApplication;
 import com.app.trafficclient.R;
-import com.app.trafficclient.entry.TrafficMangItem;
+import com.app.trafficclient.entry.ZLTrafficMangItem;
 
 import java.util.List;
 
-public class TrafficMangAdapter extends RecyclerView.Adapter<TrafficMangAdapter.ViewHolder> {
-    List<TrafficMangItem> itemList;
+public class ZLTrafficMangAdapter extends RecyclerView.Adapter<ZLTrafficMangAdapter.ViewHolder> {
+    List<ZLTrafficMangItem> itemList;
 
-    public TrafficMangAdapter(List<TrafficMangItem> itemList) {
+    public ZLTrafficMangAdapter(List<ZLTrafficMangItem> itemList) {
         this.itemList = itemList;
     }
 
@@ -29,7 +29,7 @@ public class TrafficMangAdapter extends RecyclerView.Adapter<TrafficMangAdapter.
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        TrafficMangItem item = itemList.get(position);
+        ZLTrafficMangItem item = itemList.get(position);
         holder.roadTV.setText(item.getRoad());
         holder.redTV.setText(item.getRedTime());
         holder.yellowTV.setText(item.getYellowTime());
