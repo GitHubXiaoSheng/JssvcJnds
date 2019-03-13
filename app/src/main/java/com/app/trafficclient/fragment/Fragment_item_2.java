@@ -1,7 +1,5 @@
 package com.app.trafficclient.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -30,8 +28,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class TrafficMangFragment extends Fragment {
-    private final String TAG = "TrafficMangFragment";
+public class Fragment_item_2 extends Fragment {
+    private final String TAG = "Fragment_item_2";
     private View view;
     private Spinner spinner;
     private Button queryBtn;
@@ -41,7 +39,7 @@ public class TrafficMangFragment extends Fragment {
     private List<TrafficMangItem> trafficList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment2_traffic_mang, container, false);
+        view = inflater.inflate(R.layout.fragment_item_layout_2, container, false);
         initView();
         initData(1);
         setListener();

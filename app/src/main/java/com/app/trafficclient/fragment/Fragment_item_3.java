@@ -1,10 +1,13 @@
-package com.app.trafficclient.activity;
+package com.app.trafficclient.fragment;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -22,7 +25,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Activity_Item_3 extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Fragment_item_3 extends Fragment  implements AdapterView.OnItemSelectedListener{
+
 
     private Spinner spinner;
     private ArrayAdapter arrayAdapter;
@@ -39,26 +43,30 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
     private SQLiteDatabase db;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_layout_3);
-        mySQLiteOpenHelper = new MySQLiteOpenHelper(Activity_Item_3.this, MySQLiteOpenHelper.DBNAME, null, 1);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_item_layout_3, container, false);
+    }
 
-        textView = findViewById(R.id.zzj_textView_NoDatatishi);
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        mySQLiteOpenHelper = new MySQLiteOpenHelper(getActivity(), MySQLiteOpenHelper.DBNAME, null, 1);
 
-        spinner = findViewById(R.id.zzj_spinner_zhangdanpaixu_activity3);
+        textView = getActivity().findViewById(R.id.zzj_textView_NoDatatishi);
+
+        spinner = getActivity().findViewById(R.id.zzj_spinner_zhangdanpaixu_activity3);
         stringList.add("降序排序");
         stringList.add("升序排序");
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, stringList);
+        arrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, stringList);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_expandable_list_item_1);
         spinner.setAdapter(arrayAdapter);
         spinner.setOnItemSelectedListener(this);
 
-        listView = findViewById(R.id.zzj_listView_chongzhijilu);
+        listView = getActivity().findViewById(R.id.zzj_listView_chongzhijilu);
 
         jiangxuPaixu();
 
-        Button button = findViewById(R.id.zzj_button_chaxun_activity3);
+        Button button = getActivity().findViewById(R.id.zzj_button_chaxun_activity3);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,6 +77,7 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
                 }
             }
         });
+
     }
 
     private void shengxuPaixu() {
@@ -98,7 +107,7 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
             listView.setVisibility(View.VISIBLE);
             textView.setVisibility(View.GONE);
         }
-        chongzhiAdapter = new ZzjChongzhiAdapter(this, R.layout.zzj_chongzhi_item,chongzhiList);
+        chongzhiAdapter = new ZzjChongzhiAdapter(getActivity(), R.layout.zzj_chongzhi_item,chongzhiList);
         listView.setAdapter(chongzhiAdapter);
     }
 
@@ -129,7 +138,7 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
             listView.setVisibility(View.VISIBLE);
             textView.setVisibility(View.GONE);
         }
-        chongzhiAdapter = new ZzjChongzhiAdapter(this, R.layout.zzj_chongzhi_item,chongzhiList);
+        chongzhiAdapter = new ZzjChongzhiAdapter(getActivity(), R.layout.zzj_chongzhi_item,chongzhiList);
         listView.setAdapter(chongzhiAdapter);
     }
 
@@ -143,4 +152,5 @@ public class Activity_Item_3 extends AppCompatActivity implements AdapterView.On
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }

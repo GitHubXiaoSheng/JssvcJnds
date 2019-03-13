@@ -10,7 +10,6 @@ import com.app.trafficclient.MyApplication;
 import com.app.trafficclient.R;
 import com.app.trafficclient.entry.TrafficMangItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TrafficMangAdapter extends RecyclerView.Adapter<TrafficMangAdapter.ViewHolder> {

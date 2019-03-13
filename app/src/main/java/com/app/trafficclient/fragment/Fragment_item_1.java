@@ -1,13 +1,14 @@
-package com.app.trafficclient.activity;
-
+package com.app.trafficclient.fragment;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -28,74 +29,76 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Activity_Item_1 extends AppCompatActivity {
+public class Fragment_item_1 extends Fragment {
+
     private TextView tv_accountbalance;
     private EditText edt_rechargemoney;
     private Spinner spinner_carnumber;
     private Button btn_query,btn_rechanrge;
-    private List<String>carlist;
+    private List<String> carlist;
     private ArrayAdapter carnumberadapter;
     private String chehao;
     MySQLiteOpenHelper mySQLiteOpenHelper;
     SQLiteDatabase database;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_layout_1);
-        initView();
-        http("1");
-        mySQLiteOpenHelper=new MySQLiteOpenHelper(this,MySQLiteOpenHelper.DBNAME,null,1);
-        database=mySQLiteOpenHelper.getWritableDatabase();
-
-
-
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_item_layout_1, container, false);
     }
 
-void initView(){
-        tv_accountbalance=findViewById(R.id.tv_account_balance);
-        edt_rechargemoney=findViewById(R.id.tv_recharge_money);
-        spinner_carnumber=findViewById(R.id.spinner_rechanrge);
-        btn_query=findViewById(R.id.btn_query);
-        btn_rechanrge=findViewById(R.id.btn_recharge);
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initView();
+        http("1");
+        mySQLiteOpenHelper=new MySQLiteOpenHelper(getActivity(),MySQLiteOpenHelper.DBNAME,null,1);
+        database=mySQLiteOpenHelper.getWritableDatabase();
+    }
+
+    void initView(){
+        tv_accountbalance=getActivity().findViewById(R.id.tv_account_balance);
+        edt_rechargemoney=getActivity().findViewById(R.id.tv_recharge_money);
+        spinner_carnumber=getActivity().findViewById(R.id.spinner_rechanrge);
+        btn_query=getActivity().findViewById(R.id.btn_query);
+        btn_rechanrge=getActivity().findViewById(R.id.btn_recharge);
         carlist=new ArrayList<>();
         for (int i=1;i<=4;i++){
             carlist.add(i+"");
         }
-        carnumberadapter=new ArrayAdapter(this,android.R.layout.simple_list_item_1,carlist);
+        carnumberadapter=new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,carlist);
         carnumberadapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_carnumber.setAdapter(carnumberadapter);
-       spinner_carnumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-           @Override
-           public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-               chehao=carlist.get(i);
-           }
+        spinner_carnumber.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                chehao=carlist.get(i);
+            }
 
-           @Override
-           public void onNothingSelected(AdapterView<?> adapterView) {
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
-           }
-       });
-       btn_query.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
-           }
-       });
-       btn_rechanrge.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               String money = edt_rechargemoney.getText().toString().trim();
-               recharge(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1),money);
-           }
-       });
+            }
+        });
+        btn_query.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                http(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1));
+            }
+        });
+        btn_rechanrge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String money = edt_rechargemoney.getText().toString().trim();
+                recharge(String.valueOf(spinner_carnumber.getSelectedItemPosition()+1),money);
+            }
+        });
     }
 
-void http(String str){
-    JSONObject jsonObject=new JSONObject();
-    try {
-        jsonObject.put("CarId",str);
-        jsonObject.put("UserName","user1");
+    void http(String str){
+        JSONObject jsonObject=new JSONObject();
+        try {
+            jsonObject.put("CarId",str);
+            jsonObject.put("UserName","user1");
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -105,8 +108,8 @@ void http(String str){
             public void onResponse(JSONObject jsonObject) {
                 try {
                     Log.d("返回信息", jsonObject.getString("Balance"));
-                  tv_accountbalance.setText(jsonObject.getString("Balance"));
-                  edt_rechargemoney.setText("");
+                    tv_accountbalance.setText(jsonObject.getString("Balance"));
+                    edt_rechargemoney.setText("");
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -151,6 +154,4 @@ void http(String str){
             e.printStackTrace();
         }
     }
-    }
-
-
+}
