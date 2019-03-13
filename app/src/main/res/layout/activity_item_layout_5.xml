@@ -1,7 +1,174 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="50dp">
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="温度"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_1"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_2"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="湿度"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_3"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="光照强度"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="50dp">
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_4"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="CO2"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_5"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="PM2.5"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_hezi_6"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:textSize="75dp"
+                android:text="道路状况"/>
+
+            <TextView
+                android:id="@+id/zzj_textView_yuan_6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom|right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
