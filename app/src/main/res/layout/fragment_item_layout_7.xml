@@ -1,14 +1,184 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment.Fragment_item_7">
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="阈值设置："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <TextView
+            android:id="@+id/zzj_textView_yuzhi_xianshi"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:text="关"
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <Switch
+            android:id="@+id/zzj_switch_yuzhi"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"/>
+
+    </LinearLayout>
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginRight="150dp"
+        android:background="#000000"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="温度："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_wendu_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="湿度："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_shidu_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="光照强度："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_guangzhao_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="CO2："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_co2_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="PM2.5："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_pm25_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center">
+
+        <TextView
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:text="道路状态："
+            android:gravity="center|right"
+            android:textSize="30dp"/>
+
+        <EditText
+            android:id="@+id/zzj_editView_daolu_yuzhi"
+            android:layout_width="500dp"
+            android:layout_height="match_parent"
+            android:digits="0123456789"
+            android:background="@drawable/zzj_background_1"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/zzj_button_yuzhibaocun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:text="保存"/>
+
+</LinearLayout>
