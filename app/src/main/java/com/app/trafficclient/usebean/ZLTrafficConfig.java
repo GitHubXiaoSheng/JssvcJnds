@@ -1,6 +1,6 @@
 package com.app.trafficclient.usebean;
 
-public class TrafficConfig {
+public class ZLTrafficConfig {
     private String RESULT;
     private String ERRMSG;
     private String RedTime;

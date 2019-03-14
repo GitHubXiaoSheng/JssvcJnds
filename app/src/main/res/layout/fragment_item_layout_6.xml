@@ -1,14 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.Fragment_item_6">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/frag6_contenttitle_tv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="温度"
+        android:textColor="#000"
+        android:gravity="center"
+        android:textSize="30sp"/>
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/frag6_linechart"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="5dp"
+        android:paddingBottom="10dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+        <TextView
+            android:id="@+id/frag6_index1_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/frag6_index2_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/frag6_index3_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/frag6_index4_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/frag6_index5_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+        <TextView
+            android:id="@+id/frag6_index6_tv"
+            android:layout_width="@dimen/zl_frag6_index_r"
+            android:layout_height="@dimen/zl_frag6_index_r"
+            android:layout_marginRight="20dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:textSize="30sp"/>
+    </LinearLayout>
+</LinearLayout>
