@@ -50,16 +50,17 @@ public class Fragment_item_5 extends Fragment {
         initView();
         mySQLiteOpenHelper = new MySQLiteOpenHelper(getContext(), MySQLiteOpenHelper.DBNAME, null, 1);
         db = mySQLiteOpenHelper.getWritableDatabase();
-
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
                 addData();
             }
         },0,3000);
+
     }
 
     private void addData() {
+        Log.d("TAG", "addData: 111");
         HttpRequest.post("GetAllSense", "{\"UserName\":\"user1\"}", new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject jsonObject) {
