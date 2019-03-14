@@ -77,7 +77,7 @@ public class LoginActivity extends Activity {
 			public void onClick(View v) {
 				final String account = accountET.getText().toString();
 				String pwd = pwdET.getText().toString();
-//				startActivity(new Intent(LoginActivity.this,MainActivity.class));
+//				startActivity(new Intent(LoginActivity.this, MainActivity.class));
 //				finish();
 				HttpRequest.post("user_login", "{\"UserName\":\"" + account + "\",\"UserPwd\": \"" + pwd + "\"}",
 					new Response.Listener<JSONObject>() {
