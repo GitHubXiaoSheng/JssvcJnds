@@ -91,11 +91,13 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码6",
                 "模块代码7",
                 "模块代码8",
+                "模块代码9",
                 "创意题目",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
