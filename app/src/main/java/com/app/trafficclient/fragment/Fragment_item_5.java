@@ -2,6 +2,8 @@ package com.app.trafficclient.fragment;
 
 
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -38,6 +40,9 @@ public class Fragment_item_5 extends Fragment {
 
     private int dangqianId_1,dangqianId_2;
     private ContentValues values_1,values_2;
+
+    private Boolean isOFF;
+    private int yuzhi_wendu,yuzhi_shidu,yuzhi_guangzhao,yuzhi_co2,yuzhi_pm25,yuzhi_daolu;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -108,32 +113,33 @@ public class Fragment_item_5 extends Fragment {
                     textView_4.setText(co2+"");
                     textView_5.setText(pm25+"");
 
-                    if (wendu > 35) {
-                        linearLayout_1.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_1.setBackgroundColor(Color.parseColor("#00ff00"));
+                    if (isOFF){
+                        if (wendu > yuzhi_wendu) {
+                            linearLayout_1.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_1.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
+                        if (shidu > yuzhi_shidu) {
+                            linearLayout_2.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_2.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
+                        if (guangzhao > yuzhi_guangzhao) {
+                            linearLayout_3.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_3.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
+                        if (co2 > yuzhi_co2) {
+                            linearLayout_4.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_4.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
+                        if (pm25 > yuzhi_pm25) {
+                            linearLayout_5.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_5.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
                     }
-                    if (shidu > 50) {
-                        linearLayout_2.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_2.setBackgroundColor(Color.parseColor("#00ff00"));
-                    }
-                    if (guangzhao > 3000) {
-                        linearLayout_3.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_3.setBackgroundColor(Color.parseColor("#00ff00"));
-                    }
-                    if (co2 > 7500) {
-                        linearLayout_4.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_4.setBackgroundColor(Color.parseColor("#00ff00"));
-                    }
-                    if (pm25 > 200) {
-                        linearLayout_5.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_5.setBackgroundColor(Color.parseColor("#00ff00"));
-                    }
-
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -168,12 +174,13 @@ public class Fragment_item_5 extends Fragment {
                         values_2.put("time",format.format(date));
                         db.insert("daolu", null, values_2);
                     }
-
                     textView_6.setText(daolu+"");
-                    if (daolu > 3) {
-                        linearLayout_6.setBackgroundColor(Color.parseColor("#ff0000"));
-                    }else {
-                        linearLayout_6.setBackgroundColor(Color.parseColor("#00ff00"));
+                    if (isOFF) {
+                        if (daolu > yuzhi_daolu) {
+                            linearLayout_6.setBackgroundColor(Color.parseColor("#ff0000"));
+                        }else {
+                            linearLayout_6.setBackgroundColor(Color.parseColor("#00ff00"));
+                        }
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -195,6 +202,18 @@ public class Fragment_item_5 extends Fragment {
         textView_4 = getActivity().findViewById(R.id.zzj_textView_yuan_4);
         textView_5 = getActivity().findViewById(R.id.zzj_textView_yuan_5);
         textView_6 = getActivity().findViewById(R.id.zzj_textView_yuan_6);
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("yuzhi_isOFF", Context.MODE_PRIVATE);
+        isOFF = sharedPreferences.getBoolean("yuzhi", true);
+
+        SharedPreferences sharedPreferences2 = getActivity().getSharedPreferences("yuzhi",Context.MODE_PRIVATE);
+        yuzhi_wendu = sharedPreferences2.getInt("wendu",0);
+        yuzhi_shidu = sharedPreferences2.getInt("shidu",0);
+        yuzhi_guangzhao = sharedPreferences2.getInt("guangzhao",0);
+        yuzhi_co2 = sharedPreferences2.getInt("co2",0);
+        yuzhi_pm25 = sharedPreferences2.getInt("pm25",0);
+        yuzhi_daolu = sharedPreferences2.getInt("daolu",0);
+
     }
 
 }
