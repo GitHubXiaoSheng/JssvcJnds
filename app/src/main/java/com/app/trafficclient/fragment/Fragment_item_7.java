@@ -1,6 +1,7 @@
 package com.app.trafficclient.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,6 +16,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.app.trafficclient.MyReceiver;
 import com.app.trafficclient.R;
 
 public class Fragment_item_7 extends Fragment {
@@ -44,14 +46,30 @@ public class Fragment_item_7 extends Fragment {
                     editor = getActivity().getSharedPreferences("yuzhi_isOFF", Context.MODE_PRIVATE).edit();
                     editor.putBoolean("yuzhi", true);
                     editor.apply();
-                    button.setEnabled(true);
+                    button.setEnabled(false);
                     textView_isOFF.setText("开");
+                    editText_1.setEnabled(false);
+                    editText_2.setEnabled(false);
+                    editText_3.setEnabled(false);
+                    editText_4.setEnabled(false);
+                    editText_5.setEnabled(false);
+                    editText_6.setEnabled(false);
+
+                    Intent intent = new Intent(getActivity(), MyReceiver.class);
+//                    PendingIntent pendingIntent = new PendingIntent()
+
                 }else {
                     editor = getActivity().getSharedPreferences("yuzhi_isOFF", Context.MODE_PRIVATE).edit();
                     editor.putBoolean("yuzhi", false);
                     editor.apply();
-                    button.setEnabled(false);
+                    button.setEnabled(true);
                     textView_isOFF.setText("关");
+                    editText_1.setEnabled(true);
+                    editText_2.setEnabled(true);
+                    editText_3.setEnabled(true);
+                    editText_4.setEnabled(true);
+                    editText_5.setEnabled(true);
+                    editText_6.setEnabled(true);
                 }
             }
         });
@@ -90,5 +108,38 @@ public class Fragment_item_7 extends Fragment {
         editText_5 = getActivity().findViewById(R.id.zzj_editView_pm25_yuzhi);
         editText_6 = getActivity().findViewById(R.id.zzj_editView_daolu_yuzhi);
         button = getActivity().findViewById(R.id.zzj_button_yuzhibaocun);
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("yuzhi",Context.MODE_PRIVATE);
+        editText_1.setText(sharedPreferences.getInt("wendu",0)+"");
+        editText_2.setText(sharedPreferences.getInt("shidu",0)+"");
+        editText_3.setText(sharedPreferences.getInt("guangzhao",0)+"");
+        editText_4.setText(sharedPreferences.getInt("co2",0)+"");
+        editText_5.setText(sharedPreferences.getInt("pm25",0)+"");
+        editText_6.setText(sharedPreferences.getInt("daolu",0)+"");
+
+
+        SharedPreferences sharedPreferences2 = getActivity().getSharedPreferences("yuzhi_isOFF",Context.MODE_PRIVATE);
+        if (sharedPreferences2.getBoolean("yuzhi",true)){
+            aSwitch.setChecked(true);
+            button.setEnabled(false);
+            textView_isOFF.setText("开");
+            editText_1.setEnabled(false);
+            editText_2.setEnabled(false);
+            editText_3.setEnabled(false);
+            editText_4.setEnabled(false);
+            editText_5.setEnabled(false);
+            editText_6.setEnabled(false);
+        }else {
+            aSwitch.setChecked(false);
+            button.setEnabled(true);
+            textView_isOFF.setText("关");
+            editText_1.setEnabled(true);
+            editText_2.setEnabled(true);
+            editText_3.setEnabled(true);
+            editText_4.setEnabled(true);
+            editText_5.setEnabled(true);
+            editText_6.setEnabled(true);
+        }
+
     }
 }
