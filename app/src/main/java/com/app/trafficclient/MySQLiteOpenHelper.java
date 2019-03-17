@@ -68,6 +68,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "zhi Integer,"
             + "dq_zhi Integer)";
 
+
+    public static final String WEI_ZHANG = "create table weizhang("
+            + "id Integer primary key autoincrement,"
+            + "chepaihao text)";
+
     public MySQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         contextId = context;
@@ -84,6 +89,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TONGZHI_CO2);
         db.execSQL(TONGZHI_PM25);
         db.execSQL(TONGZHI_DAOLU);
+        db.execSQL(WEI_ZHANG);
     }
 
     @Override

@@ -1,8 +1,10 @@
 package com.app.trafficclient.fragment;
 
 
+import android.content.ContentValues;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.app.trafficclient.MySQLiteOpenHelper;
 import com.app.trafficclient.R;
 import com.app.trafficclient.activity.YWS_weizhangchaxun;
 import com.app.trafficclient.util.HttpRequest;
@@ -30,6 +33,9 @@ import org.json.JSONObject;
 public class Fragment_item_12 extends Fragment {
     private EditText edt_chepaihao;
     private Button btn_chaxun;
+
+    private MySQLiteOpenHelper mySQLiteOpenHelper;
+    private SQLiteDatabase db;
 
 
     @Override
@@ -50,6 +56,9 @@ public class Fragment_item_12 extends Fragment {
             }
         });
 
+        mySQLiteOpenHelper=new MySQLiteOpenHelper(getContext(),MySQLiteOpenHelper.DBNAME,null,1);
+        db =mySQLiteOpenHelper.getWritableDatabase();
+
     }
     boolean is;
     private  void http(){
@@ -66,7 +75,11 @@ public class Fragment_item_12 extends Fragment {
                         is = false;
                         if (chepaihao.equals(jsonObject1.getString("carnumber"))) {
                             Intent intent = new Intent(getContext(), YWS_weizhangchaxun.class);
-                            intent.putExtra("chepaihao",chepaihao);
+
+                            ContentValues values = new ContentValues();
+                            values.put("chepaihao",chepaihao);
+                            db.insert("weizhang",null,values);
+
                             startActivity(intent);
                             is = true;
                             break;
@@ -81,4 +94,10 @@ public class Fragment_item_12 extends Fragment {
             }
         },null);
     }
+
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//        db.delete("weizhang","id < ?",new String[]{"1000"});
+//    }
 }
