@@ -1,9 +1,12 @@
 package com.app.trafficclient.fragment;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.SystemClock;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -29,6 +32,8 @@ public class Fragment_item_7 extends Fragment {
     private Button button;
 
     private SharedPreferences.Editor editor;
+
+    private AlarmManager alarmManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -56,7 +61,9 @@ public class Fragment_item_7 extends Fragment {
                     editText_6.setEnabled(false);
 
                     Intent intent = new Intent(getActivity(), MyReceiver.class);
-//                    PendingIntent pendingIntent = new PendingIntent()
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
+                    alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                    alarmManager.setRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP, SystemClock.elapsedRealtime() + 10 * 1000,10 * 1000,pendingIntent);
 
                 }else {
                     editor = getActivity().getSharedPreferences("yuzhi_isOFF", Context.MODE_PRIVATE).edit();
@@ -70,6 +77,12 @@ public class Fragment_item_7 extends Fragment {
                     editText_4.setEnabled(true);
                     editText_5.setEnabled(true);
                     editText_6.setEnabled(true);
+
+                    Intent intent = new Intent(getActivity(), MyReceiver.class);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(getContext(), 0, intent, 0);
+                    alarmManager = (AlarmManager) getActivity().getSystemService(Context.ALARM_SERVICE);
+                    alarmManager.cancel(pendingIntent);
+
                 }
             }
         });

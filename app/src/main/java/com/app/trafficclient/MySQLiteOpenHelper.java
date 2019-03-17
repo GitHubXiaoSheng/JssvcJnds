@@ -32,6 +32,42 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "daolu Integer,"
             + "time text)";
 
+    public static final String TONGZHI_WENDU = "create table tongzhi_wendu("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
+    public static final String TONGZHI_SHIDU = "create table tongzhi_shidu("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
+    public static final String TONGZHI_GUANGZHAO = "create table tongzhi_guangzhao("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
+    public static final String TONGZHI_CO2 = "create table tongzhi_co2("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
+    public static final String TONGZHI_PM25 = "create table tongzhi_pm25("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
+    public static final String TONGZHI_DAOLU = "create table tongzhi_daolu("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
     public MySQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         contextId = context;
@@ -42,6 +78,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CHONGZHI_JILU);
         db.execSQL(HUANJING_ZHIBIAO);
         db.execSQL(DAOLU_ZHIBIAO);
+        db.execSQL(TONGZHI_WENDU);
+        db.execSQL(TONGZHI_SHIDU);
+        db.execSQL(TONGZHI_GUANGZHAO);
+        db.execSQL(TONGZHI_CO2);
+        db.execSQL(TONGZHI_PM25);
+        db.execSQL(TONGZHI_DAOLU);
     }
 
     @Override

@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,25 +36,22 @@ public class Fragment_item_8 extends Fragment {
     private ImageView imageView;
     private AnimationDrawable animationDrawable;
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_item_layout_8, container, false);
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+    public void onStart() {
+        super.onStart();
         tv_data=getActivity().findViewById(R.id.tv_data);
         tv_chuxing=getActivity().findViewById(R.id.tv_chuxingche);
         switch_car_1=getActivity().findViewById(R.id.tc_car1);
         switch_car_2=getActivity().findViewById(R.id.tc_car2);
         switch_car_3=getActivity().findViewById(R.id.tc_car3);
         imageView=getActivity().findViewById(R.id.anim_imageview);
+
         animationDrawable=(AnimationDrawable)imageView.getBackground();
         animationDrawable.start();
-
-
 
 
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy年MM月dd日");
@@ -127,6 +123,7 @@ public class Fragment_item_8 extends Fragment {
                 }
             }
         });
+
     }
 
     private void showdialog(){
@@ -237,5 +234,6 @@ public class Fragment_item_8 extends Fragment {
         }).show();
 
     }
+
 
 }

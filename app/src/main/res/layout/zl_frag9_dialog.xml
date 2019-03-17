@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/boder"
+    android:layout_height="match_parent"
+    >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="车辆账户充值"
+        android:textSize="30sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/zl_boder_light"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/frag9_dialog_plates_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:text="车牌号："
+        android:textSize="30sp"
+        android:textColor="#000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额："
+            android:textSize="30sp"
+            android:textColor="#000" />
+        <EditText
+            android:id="@+id/frag9_dialog_amount_et"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:hint="1-999"
+            android:background="@android:drawable/edit_text"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="元"
+            android:textSize="30sp"
+            android:textColor="#000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal|bottom">
+        <Button
+            android:id="@+id/frag9_dialog_recharge_btn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="充值"
+            android:layout_marginRight="70dp"
+            android:textSize="30sp"/>
+        <Button
+            android:id="@+id/frag9_dialog_cancel_btn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textSize="30sp"/>
+    </LinearLayout>
+</LinearLayout>
