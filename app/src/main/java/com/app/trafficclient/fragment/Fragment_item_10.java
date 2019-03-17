@@ -1,5 +1,6 @@
 package com.app.trafficclient.fragment;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -81,6 +83,33 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                     listView_2.setAdapter(arrayAdapter);
                 }
                 break;
+            case R.id.zzj_textView_901_xiangqing:
+                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                final AlertDialog dialog = builder.create();
+                View view1 = View.inflate(getContext(), R.layout.zzj_901_gongjiao_dialog, null);
+                dialog.setView(view1);
+                dialog.show();
+                LinearLayout linearLayout = view1.findViewById(R.id.zzj_901_dialog_LinearLayout);
+
+                for (int i = 0; i < 15; i++) {
+                    View view2 = LayoutInflater.from(getContext()).inflate(R.layout.zzj_901_gongjiao_dialog_item, linearLayout, false);
+                    TextView textView_1 = view2.findViewById(R.id.zzj_901_dialog_item_textView_1);
+                    TextView textView_2 = view2.findViewById(R.id.zzj_901_dialog_item_textView_2);
+                    TextView textView_3 = view2.findViewById(R.id.zzj_901_dialog_item_textView_3);
+                    textView_1.setText((i+1)+"");
+                    textView_2.setText((i+1)+"");
+                    textView_3.setText((i+1)+"");
+                    linearLayout.addView(view2);
+                }
+
+                Button button = view1.findViewById(R.id.zzj_901_dialog_button_back);
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        dialog.dismiss();
+                    }
+                });
+                break;
             default:
                 break;
         }
@@ -98,7 +127,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                         JSONObject jsonObject1 = jsonArray.getJSONObject(i);
                         String item1 = jsonObject1.getString("BusId") + "（101人）";
                         String item3 = "距离站牌 "+jsonObject1.getInt("Distance") + "米";
-                        String item2 = (jsonObject1.getInt("Distance")/3600) +"分钟到达";
+                        String item2 = (jsonObject1.getInt("Distance")/333) +"分钟到达";
                         Log.d("测试", item1 + item2 + item3);
                         ZzjGongjiaochaxun gongjiaochaxun = new ZzjGongjiaochaxun(item1, item2, item3);
                         zzjGongjiaochaxunList.add(gongjiaochaxun);
@@ -149,6 +178,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
         textView_shou_mo = getActivity().findViewById(R.id.zzj_textView_901_shoumobanche);
         textView_cheng_zai = getActivity().findViewById(R.id.zzj_textView_901_chengzairenshu);
         textView_xiangqing = getActivity().findViewById(R.id.zzj_textView_901_xiangqing);
+        textView_xiangqing.setOnClickListener(this);
 
         linearLayout_1 = getActivity().findViewById(R.id.zzj_LinearLayout_liebiao_1);
         linearLayout_2 = getActivity().findViewById(R.id.zzj_LinearLayout_liebiao_2);
