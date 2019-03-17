@@ -25,6 +25,9 @@ import com.app.trafficclient.fragment.Fragment_item_1;
 import com.app.trafficclient.fragment.Fragment_item_10;
 import com.app.trafficclient.fragment.Fragment_item_11;
 import com.app.trafficclient.fragment.Fragment_item_12;
+import com.app.trafficclient.fragment.Fragment_item_13;
+import com.app.trafficclient.fragment.Fragment_item_14;
+import com.app.trafficclient.fragment.Fragment_item_15;
 import com.app.trafficclient.fragment.Fragment_item_2;
 import com.app.trafficclient.fragment.Fragment_item_3;
 import com.app.trafficclient.fragment.Fragment_item_4;
@@ -98,12 +101,15 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码10",
                 "模块代码11",
                 "模块代码12",
-                "模块代码9",
-                "创意题目",
+                "模块代码13",
+                "模块代码14",
+                "模块代码15",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
@@ -175,7 +181,16 @@ public class MainActivity extends AppCompatActivity {
                     case 11:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_12()).commit();
                         break;
-                    case 13:    //退出
+                    case 12:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_13()).commit();
+                        break;
+                    case 13:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_14()).commit();
+                        break;
+                    case 14:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_15()).commit();
+                        break;
+                    case 15:    //退出
                         exitAppDialog();
                         break;
                     default:
