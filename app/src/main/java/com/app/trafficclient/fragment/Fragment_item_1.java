@@ -107,8 +107,8 @@ public class Fragment_item_1 extends Fragment {
             @Override
             public void onResponse(JSONObject jsonObject) {
                 try {
-                    Log.d("返回信息", jsonObject.getString("ZL_Balance"));
-                    tv_accountbalance.setText(jsonObject.getString("ZL_Balance"));
+                    Log.d("返回信息", jsonObject.getString("Balance"));
+                    tv_accountbalance.setText(jsonObject.getString("Balance"));
                     edt_rechargemoney.setText("");
                 } catch (JSONException e) {
                     e.printStackTrace();

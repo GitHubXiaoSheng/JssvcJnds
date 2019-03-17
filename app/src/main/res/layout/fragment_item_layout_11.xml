@@ -1,14 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".fragment.Fragment_item_11">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="70dp"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/frag11_paixu_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="排序:"
+            android:textSize="35sp"
+            android:textColor="#000"/>
 
-</FrameLayout>
+        <Spinner
+            android:id="@+id/frag11_spinner"
+            android:layout_width="250dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:entries="@array/frag2_spinner"
+            android:layout_toRightOf="@+id/frag11_paixu_tv"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:layout_alignParentRight="true">
+            <Button
+                android:id="@+id/frag11_query_btn"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="30dp"
+                android:text="查询"
+                android:background="@drawable/boder"
+                />
+            <Button
+                android:id="@+id/frag11_batch_btn"
+                android:layout_width="@dimen/btn_width"
+                android:layout_height="wrap_content"
+                android:text="批量设置"
+                android:background="@drawable/boder"
+                />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/boder"
+            android:gravity="center"
+            android:text="路口"
+            android:textSize="@dimen/frag11_textsize"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:text="红灯时长（S）"
+            android:background="@drawable/boder"
+            android:textSize="@dimen/frag11_textsize"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:background="@drawable/boder"
+            android:text="黄灯时长（S）"
+            android:textSize="@dimen/frag11_textsize"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:background="@drawable/boder"
+            android:text="绿灯时长（S）"
+            android:textSize="@dimen/frag11_textsize"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:text="操作项"
+            android:background="@drawable/boder"
+            android:textSize="@dimen/frag11_textsize"/>
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:text="设置"
+            android:background="@drawable/boder"
+            android:textSize="@dimen/frag11_textsize"/>
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/frag11_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</LinearLayout>
