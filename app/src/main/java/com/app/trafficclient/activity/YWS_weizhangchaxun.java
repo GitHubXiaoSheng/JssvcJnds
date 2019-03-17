@@ -84,15 +84,13 @@ private  void http1(){
 
             try {
                 JSONArray jsonArray = jsonObject.getJSONArray("ROWS_DETAIL");
-                for (int i = 0; i < jsonArray.length(); i++) {
-                    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-                    Log.d("tag",jsonObject1.getString("datetime"));
-                  tv_time.setText(jsonObject1.getString("datetime"));
-                  tv_road.setText(jsonObject1.getString("paddr"));
-                  tv_info.setText("驾驶机动车在高速公路，城市快速路以外的道路上不按规定行驶的");
 
-                    }
-
+                JSONObject jsonObject1 = jsonArray.getJSONObject(0);
+                Log.d("打印",jsonObject1.toString());
+                Log.d("打印",jsonObject1.getString("pdatetime"));
+                tv_time.setText(jsonObject1.getString("pdatetime"));
+                tv_road.setText(jsonObject1.getString("paddr"));
+                tv_info.setText("驾驶机动车在高速公路，城市快速路以外的道路上不按规定行驶的");
 
             } catch (JSONException e) {
                 e.printStackTrace();
