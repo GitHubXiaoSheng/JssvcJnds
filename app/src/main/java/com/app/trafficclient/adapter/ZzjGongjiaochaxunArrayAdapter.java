@@ -12,10 +12,10 @@ import com.app.trafficclient.R;
 
 import java.util.List;
 
-public class ZzjGongjiaochaxun_ArrayAdapter extends ArrayAdapter<ZzjGongjiaochaxun> {
+public class ZzjGongjiaochaxunArrayAdapter extends ArrayAdapter<ZzjGongjiaochaxun> {
 
     public int resourceId;
-    public ZzjGongjiaochaxun_ArrayAdapter(@NonNull Context context, int resource, @NonNull List<ZzjGongjiaochaxun> objects) {
+    public ZzjGongjiaochaxunArrayAdapter(@NonNull Context context, int resource, @NonNull List<ZzjGongjiaochaxun> objects) {
         super(context, resource, objects);
         resourceId = resource;
     }

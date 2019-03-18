@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:text="实时数据分析"
+        android:textSize="30dp"
+        android:gravity="center"/>
+
+    <com.github.mikephil.charting.charts.PieChart
+        android:id="@+id/zzj_fragment_18_2_barChart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="200dp"/>
+
+</LinearLayout>

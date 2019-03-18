@@ -32,6 +32,12 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "daolu Integer,"
             + "time text)";
 
+    public static final String TONGZHI_QUANBU = "create table tongzhi_quanbu("
+            + "id Integer primary key autoincrement,"
+            + "leixing text,"
+            + "zhi Integer,"
+            + "dq_zhi Integer)";
+
     public static final String TONGZHI_WENDU = "create table tongzhi_wendu("
             + "id Integer primary key autoincrement,"
             + "leixing text,"
@@ -83,6 +89,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(CHONGZHI_JILU);
         db.execSQL(HUANJING_ZHIBIAO);
         db.execSQL(DAOLU_ZHIBIAO);
+        db.execSQL(TONGZHI_QUANBU);
         db.execSQL(TONGZHI_WENDU);
         db.execSQL(TONGZHI_SHIDU);
         db.execSQL(TONGZHI_GUANGZHAO);
