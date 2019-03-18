@@ -1,10 +1,7 @@
 package com.app.trafficclient.fragment;
 
 
-import android.content.ContentValues;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -16,12 +13,10 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.app.trafficclient.MySQLiteOpenHelper;
+import com.app.trafficclient.MyApplication;
 import com.app.trafficclient.R;
 import com.app.trafficclient.activity.YWS_weizhangchaxun;
 import com.app.trafficclient.util.HttpRequest;
-import com.app.trafficclient.util.LoadingDialog;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,10 +28,6 @@ import org.json.JSONObject;
 public class Fragment_item_12 extends Fragment {
     private EditText edt_chepaihao;
     private Button btn_chaxun;
-
-    private MySQLiteOpenHelper mySQLiteOpenHelper;
-    private SQLiteDatabase db;
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -56,9 +47,6 @@ public class Fragment_item_12 extends Fragment {
             }
         });
 
-        mySQLiteOpenHelper=new MySQLiteOpenHelper(getContext(),MySQLiteOpenHelper.DBNAME,null,1);
-        db =mySQLiteOpenHelper.getWritableDatabase();
-
     }
     boolean is;
     private  void http(){
@@ -75,11 +63,7 @@ public class Fragment_item_12 extends Fragment {
                         is = false;
                         if (chepaihao.equals(jsonObject1.getString("carnumber"))) {
                             Intent intent = new Intent(getContext(), YWS_weizhangchaxun.class);
-
-                            ContentValues values = new ContentValues();
-                            values.put("chepaihao",chepaihao);
-                            db.insert("weizhang",null,values);
-
+                            MyApplication.stringList.add(chepaihao);
                             startActivity(intent);
                             is = true;
                             break;

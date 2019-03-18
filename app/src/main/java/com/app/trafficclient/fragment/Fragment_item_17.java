@@ -144,12 +144,21 @@ private LinearLayout hz1,hz2,hz3,hz4,hz5;
             }
         },null);
     }
+    private Timer timer;
+
     private void shaunxin(){
-        new Timer().schedule(new TimerTask() {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
             @Override
             public void run() {
                 httpzhishu();
             }
         },1,3000);
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
     }
 }
