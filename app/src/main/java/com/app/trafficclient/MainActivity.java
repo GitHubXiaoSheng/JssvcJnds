@@ -31,7 +31,10 @@ import com.app.trafficclient.fragment.Fragment_item_15;
 import com.app.trafficclient.fragment.Fragment_item_16;
 import com.app.trafficclient.fragment.Fragment_item_17;
 import com.app.trafficclient.fragment.Fragment_item_18;
+import com.app.trafficclient.fragment.Fragment_item_19;
 import com.app.trafficclient.fragment.Fragment_item_2;
+import com.app.trafficclient.fragment.Fragment_item_20;
+import com.app.trafficclient.fragment.Fragment_item_21;
 import com.app.trafficclient.fragment.Fragment_item_3;
 import com.app.trafficclient.fragment.Fragment_item_4;
 import com.app.trafficclient.fragment.Fragment_item_5;
@@ -92,28 +95,34 @@ public class MainActivity extends AppCompatActivity {
         });
 
         final String[] actionTexts = new String[]{
-                "模块代码1",
-                "模块代码2",
-                "模块代码3",
-                "模块代码4",
-                "模块代码5",
-                "模块代码6",
-                "模块代码7",
-                "模块代码8",
-                "模块代码9",
-                "模块代码10",
-                "模块代码11",
-                "模块代码12",
-                "模块代码13",
-                "模块代码14",
-                "模块代码15",
-                "模块代码16",
-                "模块代码17",
-                "模块代码18",
+                "模块代码1_个人车辆ETC账户管理",
+                "模块代码2_红绿灯管理1",
+                "模块代码3_充值历史记录",
+                "模块代码4_车辆违章浏览",
+                "模块代码5_环境指标实时显示",
+                "模块代码6_传感器实时数据显示",
+                "模块代码7_阈值设置",
+                "模块代码8_公司交通单双号管制",
+                "模块代码9_车管局车辆账户管理功能",
+                "模块代码10_公交查询模块",
+                "模块代码11_红绿灯管理2",
+                "模块代码12_车辆违章查看",
+                "模块代码13_路况查询",
+                "模块代码14_生活助手",
+                "模块代码15_数据分析1",
+                "模块代码16_个人中心1",
+                "模块代码17_生活指数",
+                "模块代码18_我的消息",
+                "模块代码19_数据分析2",
+                "模块代码20_个人中心2",
+                "模块代码21_红绿灯管理3",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
@@ -208,7 +217,16 @@ public class MainActivity extends AppCompatActivity {
                     case 17:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_18()).commit();
                         break;
-                    case 18:    //退出
+                    case 18:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_19()).commit();
+                        break;
+                    case 19:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_20()).commit();
+                        break;
+                    case 20:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_21()).commit();
+                        break;
+                    case 21:    //退出
                         exitAppDialog();
                         break;
                     default:
