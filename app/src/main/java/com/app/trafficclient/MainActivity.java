@@ -35,6 +35,12 @@ import com.app.trafficclient.fragment.Fragment_item_19;
 import com.app.trafficclient.fragment.Fragment_item_2;
 import com.app.trafficclient.fragment.Fragment_item_20;
 import com.app.trafficclient.fragment.Fragment_item_21;
+import com.app.trafficclient.fragment.Fragment_item_22;
+import com.app.trafficclient.fragment.Fragment_item_23;
+import com.app.trafficclient.fragment.Fragment_item_24;
+import com.app.trafficclient.fragment.Fragment_item_25;
+import com.app.trafficclient.fragment.Fragment_item_26;
+import com.app.trafficclient.fragment.Fragment_item_27;
 import com.app.trafficclient.fragment.Fragment_item_3;
 import com.app.trafficclient.fragment.Fragment_item_4;
 import com.app.trafficclient.fragment.Fragment_item_5;
@@ -108,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码11_红绿灯管理2",
                 "模块代码12_车辆违章查看",
                 "模块代码13_路况查询",
-                "模块代码14_生活助手",
+                "模块代码14_生活助手1",
                 "模块代码15_数据分析1",
                 "模块代码16_个人中心1",
                 "模块代码17_生活指数",
@@ -116,10 +122,22 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码19_数据分析2",
                 "模块代码20_个人中心2",
                 "模块代码21_红绿灯管理3",
+                "模块代码22_车辆ETC账户管理1",
+                "模块代码23_车辆ETC账户管理2",
+                "模块代码24_生活助手2",
+                "模块代码25_路况查询",
+                "模块代码26_数据分析2",
+                "模块代码27_生活助手3",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
@@ -226,7 +244,25 @@ public class MainActivity extends AppCompatActivity {
                     case 20:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_21()).commit();
                         break;
-                    case 21:    //退出
+                    case 21:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_22()).commit();
+                        break;
+                    case 22:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_23()).commit();
+                        break;
+                    case 23:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_24()).commit();
+                        break;
+                    case 24:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_25()).commit();
+                        break;
+                    case 25:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_26()).commit();
+                        break;
+                    case 26:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_27()).commit();
+                        break;
+                    case 27:    //退出
                         exitAppDialog();
                         break;
                     default:
