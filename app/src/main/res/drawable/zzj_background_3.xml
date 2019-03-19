@@ -5,8 +5,8 @@
     <corners android:radius="0dp" />
 
     <stroke
-        android:color="#aaaaaa"
-        android:width="1dp" />
+        android:color="#666666"
+        android:width="2dp" />
 
     <solid android:color="#dddddd" />
 

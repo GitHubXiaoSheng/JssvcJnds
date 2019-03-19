@@ -24,6 +24,7 @@ public class MyReceiver extends BroadcastReceiver {
     private SQLiteDatabase db;
 
     private ContentValues values;
+    private ContentValues values2;
 
     private NotificationManager notificationManager;
 
@@ -60,6 +61,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("dq_zhi",yuzhi_wendu);
                         db.insert("tongzhi_wendu",null,values);
 
+                        values2 = new ContentValues();
+                        values2.put("leixing","【温度】报警");
+                        values2.put("zhi",wendu);
+                        values2.put("dq_zhi",yuzhi_wendu);
+                        db.insert("tongzhi_quanbu",null,values2);
+
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")
                                 .setContentText("温度 报警，阈值：" + yuzhi_wendu + "，当前值：" + wendu)
@@ -75,6 +82,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("zhi",shidu);
                         values.put("dq_zhi",yuzhi_shidu);
                         db.insert("tongzhi_shidu",null,values);
+
+                        values2 = new ContentValues();
+                        values2.put("leixing","【湿度】报警");
+                        values2.put("zhi",shidu);
+                        values2.put("dq_zhi",yuzhi_shidu);
+                        db.insert("tongzhi_quanbu",null,values2);
 
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")
@@ -92,6 +105,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("dq_zhi",yuzhi_guangzhao);
                         db.insert("tongzhi_guangzhao",null,values);
 
+                        values2 = new ContentValues();
+                        values2.put("leixing","【光照强度】报警");
+                        values2.put("zhi",guangzhao);
+                        values2.put("dq_zhi",yuzhi_guangzhao);
+                        db.insert("tongzhi_quanbu",null,values2);
+
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")
                                 .setContentText("光照强度 报警，阈值：" + yuzhi_guangzhao + "，当前值：" + guangzhao)
@@ -108,6 +127,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("dq_zhi",yuzhi_co2);
                         db.insert("tongzhi_co2",null,values);
 
+                        values2 = new ContentValues();
+                        values2.put("leixing","【CO2】报警");
+                        values2.put("zhi",co2);
+                        values2.put("dq_zhi",yuzhi_co2);
+                        db.insert("tongzhi_quanbu",null,values2);
+
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")
                                 .setContentText("CO2 报警，阈值：" + yuzhi_co2 + "，当前值：" + co2)
@@ -123,6 +148,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("zhi",pm25);
                         values.put("dq_zhi",yuzhi_pm25);
                         db.insert("tongzhi_pm25",null,values);
+
+                        values2 = new ContentValues();
+                        values2.put("leixing","【PM2.5】报警");
+                        values2.put("zhi",pm25);
+                        values2.put("dq_zhi",yuzhi_pm25);
+                        db.insert("tongzhi_quanbu",null,values2);
 
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")
@@ -152,6 +183,12 @@ public class MyReceiver extends BroadcastReceiver {
                         values.put("zhi",daolu);
                         values.put("dq_zhi",yuzhi_daolu);
                         db.insert("tongzhi_daolu",null,values);
+
+                        values2 = new ContentValues();
+                        values2.put("leixing","【道路状况】报警");
+                        values2.put("zhi",daolu);
+                        values2.put("dq_zhi",yuzhi_daolu);
+                        db.insert("tongzhi_quanbu",null,values2);
 
                         Notification notification = new Notification.Builder(context)
                                 .setContentTitle("警告通知")

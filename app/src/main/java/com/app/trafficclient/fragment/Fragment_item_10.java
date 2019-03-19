@@ -17,7 +17,7 @@ import android.widget.TextView;
 import com.android.volley.Response;
 import com.app.trafficclient.R;
 import com.app.trafficclient.adapter.ZzjGongjiaochaxun;
-import com.app.trafficclient.adapter.ZzjGongjiaochaxun_ArrayAdapter;
+import com.app.trafficclient.adapter.ZzjGongjiaochaxunArrayAdapter;
 import com.app.trafficclient.util.HttpRequest;
 
 import org.json.JSONArray;
@@ -34,7 +34,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
     private ImageView imageView_1,imageView_2;
 
     private ListView listView_1,listView_2;
-    private ZzjGongjiaochaxun_ArrayAdapter arrayAdapter;
+    private ZzjGongjiaochaxunArrayAdapter arrayAdapter;
     private List<ZzjGongjiaochaxun> zzjGongjiaochaxunList,zzjGongjiaochaxunList_2;
 
     private int i,j;
@@ -65,7 +65,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                     imageView_2.setBackgroundDrawable(getResources().getDrawable(R.drawable.jiantou_left));
                     imageView_1.setBackgroundDrawable(getResources().getDrawable(R.drawable.jiantou_left));
                     zzjGongjiaochaxunList.clear();
-                    arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
+                    arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
                     listView_1.setAdapter(arrayAdapter);
                 }
                 break;
@@ -79,7 +79,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                     imageView_1.setBackgroundDrawable(getResources().getDrawable(R.drawable.jiantou_left));
                     imageView_2.setBackgroundDrawable(getResources().getDrawable(R.drawable.jiantou_left));
                     zzjGongjiaochaxunList_2.clear();
-                    arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
+                    arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
                     listView_2.setAdapter(arrayAdapter);
                 }
                 break;
@@ -132,7 +132,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                         ZzjGongjiaochaxun gongjiaochaxun = new ZzjGongjiaochaxun(item1, item2, item3);
                         zzjGongjiaochaxunList.add(gongjiaochaxun);
                     }
-                    arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
+                    arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
                     listView_1.setAdapter(arrayAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -141,7 +141,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
         },null);
 
         zzjGongjiaochaxunList_2.clear();
-        arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
+        arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
         listView_2.setAdapter(arrayAdapter);
     }
 
@@ -161,7 +161,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
                         ZzjGongjiaochaxun gongjiaochaxun = new ZzjGongjiaochaxun(item1, item2, item3);
                         zzjGongjiaochaxunList_2.add(gongjiaochaxun);
                     }
-                    arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
+                    arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList_2);
                     listView_2.setAdapter(arrayAdapter);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -170,7 +170,7 @@ public class Fragment_item_10 extends Fragment implements View.OnClickListener {
         },null);
 
         zzjGongjiaochaxunList.clear();
-        arrayAdapter = new ZzjGongjiaochaxun_ArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
+        arrayAdapter = new ZzjGongjiaochaxunArrayAdapter(getContext(), R.layout.zzj_gongjiaochexun_item, zzjGongjiaochaxunList);
         listView_1.setAdapter(arrayAdapter);
     }
 

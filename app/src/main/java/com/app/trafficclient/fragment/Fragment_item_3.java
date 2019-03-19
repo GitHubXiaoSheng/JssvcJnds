@@ -63,6 +63,8 @@ public class Fragment_item_3 extends Fragment  implements AdapterView.OnItemSele
         spinner.setOnItemSelectedListener(this);
 
         listView = getActivity().findViewById(R.id.zzj_listView_chongzhijilu);
+        chongzhiAdapter = new ZzjChongzhiAdapter(getActivity(), R.layout.zzj_chongzhi_item,chongzhiList);
+        listView.setAdapter(chongzhiAdapter);
 
         jiangxuPaixu();
 
@@ -77,6 +79,8 @@ public class Fragment_item_3 extends Fragment  implements AdapterView.OnItemSele
                 }
             }
         });
+
+
 
     }
 
@@ -107,8 +111,7 @@ public class Fragment_item_3 extends Fragment  implements AdapterView.OnItemSele
             listView.setVisibility(View.VISIBLE);
             textView.setVisibility(View.GONE);
         }
-        chongzhiAdapter = new ZzjChongzhiAdapter(getActivity(), R.layout.zzj_chongzhi_item,chongzhiList);
-        listView.setAdapter(chongzhiAdapter);
+        chongzhiAdapter.notifyDataSetChanged();
     }
 
     private void jiangxuPaixu() {
@@ -138,8 +141,7 @@ public class Fragment_item_3 extends Fragment  implements AdapterView.OnItemSele
             listView.setVisibility(View.VISIBLE);
             textView.setVisibility(View.GONE);
         }
-        chongzhiAdapter = new ZzjChongzhiAdapter(getActivity(), R.layout.zzj_chongzhi_item,chongzhiList);
-        listView.setAdapter(chongzhiAdapter);
+        chongzhiAdapter.notifyDataSetChanged();
     }
 
 
