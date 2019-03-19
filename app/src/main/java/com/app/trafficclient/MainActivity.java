@@ -238,6 +238,7 @@ public class MainActivity extends AppCompatActivity {
 
         initView();
 
+        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_1()).commit();
     }
 
 

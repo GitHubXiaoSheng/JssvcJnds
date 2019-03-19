@@ -6,5 +6,5 @@
     <dimen name="zl_frag6_index_r">50dp</dimen>
     <dimen name="btn_width">120dp</dimen>
     <dimen name="frag11_textsize">20sp</dimen>
-
+    <dimen name="frag16_big">30sp</dimen>
 </resources>
