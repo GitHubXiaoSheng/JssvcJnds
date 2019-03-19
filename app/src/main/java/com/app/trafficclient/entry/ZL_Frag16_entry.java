@@ -1,13 +1,13 @@
 package com.app.trafficclient.entry;
 
-public class Frag16_entry {
+public class ZL_Frag16_entry {
     private String time;
     private String rPersonal;
     private String plate;
     private String recharge;
     private String balance;
 
-    public Frag16_entry(String time, String rPersonal, String plate, String recharge, String balance) {
+    public ZL_Frag16_entry(String time, String rPersonal, String plate, String recharge, String balance) {
         this.time = time;
         this.rPersonal = rPersonal;
         this.plate = plate;

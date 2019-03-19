@@ -8,30 +8,30 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.app.trafficclient.R;
-import com.app.trafficclient.entry.Frag16_entry;
+import com.app.trafficclient.entry.ZL_Frag16_entry;
 
 import java.util.List;
 
 
-public class Frag16_Adapter extends RecyclerView.Adapter<Frag16_Adapter.ViewHolder> {
+public class ZL_Frag16_Adapter extends RecyclerView.Adapter<ZL_Frag16_Adapter.ViewHolder> {
     private Context context;
-    private List<Frag16_entry> entryList;
+    private List<ZL_Frag16_entry> entryList;
 
-    public Frag16_Adapter(Context context, List<Frag16_entry> entryList) {
+    public ZL_Frag16_Adapter(Context context, List<ZL_Frag16_entry> entryList) {
         this.context = context;
         this.entryList = entryList;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.frag16_item_personal, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.zl_frag16_item_personal, parent, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Frag16_entry entry = entryList.get(position);
+        ZL_Frag16_entry entry = entryList.get(position);
         String time = entry.getTime().substring(0,10);
         holder.time1Tv.setText(time);
         holder.time2Tv.setText(entry.getTime());
