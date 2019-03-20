@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/zzj_background_1"
+    android:layout_height="match_parent"
+    android:layout_marginTop="100dp"
+    android:layout_marginBottom="300dp"
+    android:layout_marginLeft="300dp"
+    android:layout_marginRight="300dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="车辆账户充值"
+        android:textSize="30sp"
+        android:gravity="center_vertical"
+        android:paddingLeft="30dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/zzj_background_3"
+        android:textColor="#000" />
+    <TextView
+        android:id="@+id/zzj_fragment22_dialog_text_chehao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:text="车牌号："
+        android:textSize="30sp"
+        android:textColor="#000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="50dp"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额："
+            android:textSize="30sp"
+            android:textColor="#000" />
+        <EditText
+            android:id="@+id/zzj_fragment22_dialog_edit_jine"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:inputType="number"
+            android:maxLength="3"
+            android:hint="1-999"
+            android:background="@drawable/zzj_background_1"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="元"
+            android:textSize="30sp"
+            android:textColor="#000" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:layout_marginBottom="20dp"
+        android:gravity="center_horizontal|bottom">
+        <Button
+            android:id="@+id/zzj_fragment22_dialog_btn_chongzhi"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="充值"
+            android:layout_marginRight="70dp"
+            android:textSize="30sp"/>
+        <Button
+            android:id="@+id/zzj_fragment22_dialog_btn_quxiao"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textSize="30sp"/>
+    </LinearLayout>
+</LinearLayout>

@@ -3,7 +3,6 @@ package com.app.trafficclient;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,7 +11,6 @@ import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -35,6 +33,12 @@ import com.app.trafficclient.fragment.Fragment_item_19;
 import com.app.trafficclient.fragment.Fragment_item_2;
 import com.app.trafficclient.fragment.Fragment_item_20;
 import com.app.trafficclient.fragment.Fragment_item_21;
+import com.app.trafficclient.fragment.Fragment_item_22;
+import com.app.trafficclient.fragment.Fragment_item_23;
+import com.app.trafficclient.fragment.Fragment_item_24;
+import com.app.trafficclient.fragment.Fragment_item_25;
+import com.app.trafficclient.fragment.Fragment_item_26;
+import com.app.trafficclient.fragment.Fragment_item_27;
 import com.app.trafficclient.fragment.Fragment_item_3;
 import com.app.trafficclient.fragment.Fragment_item_4;
 import com.app.trafficclient.fragment.Fragment_item_5;
@@ -108,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码11_红绿灯管理2",
                 "模块代码12_车辆违章查看",
                 "模块代码13_路况查询",
-                "模块代码14_生活助手",
+                "模块代码14_生活助手1",
                 "模块代码15_数据分析1",
                 "模块代码16_个人中心1",
                 "模块代码17_生活指数",
@@ -116,10 +120,22 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码19_数据分析2",
                 "模块代码20_个人中心2",
                 "模块代码21_红绿灯管理3",
+                "模块代码22_车辆ETC账户管理功能",
+                "模块代码23_车辆ETC账户告警功能",
+                "模块代码24_生活助手2",
+                "模块代码25_路况查询",
+                "模块代码26_数据分析2",
+                "模块代码27_生活助手3",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
@@ -226,7 +242,25 @@ public class MainActivity extends AppCompatActivity {
                     case 20:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_21()).commit();
                         break;
-                    case 21:    //退出
+                    case 21:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_22()).commit();
+                        break;
+                    case 22:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_23()).commit();
+                        break;
+                    case 23:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_24()).commit();
+                        break;
+                    case 24:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_25()).commit();
+                        break;
+                    case 25:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_26()).commit();
+                        break;
+                    case 26:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_27()).commit();
+                        break;
+                    case 27:    //退出
                         exitAppDialog();
                         break;
                     default:
@@ -264,48 +298,48 @@ public class MainActivity extends AppCompatActivity {
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         /*给底部导航栏菜单项添加点击事件*/
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                        navigation.getMenu().findItem(R.id.navigation_1).setChecked(true);
-                        break;
-                    case 1:
-                        navigation.getMenu().findItem(R.id.navigation_3).setChecked(true);
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                switch (position) {
+//                    case 0:
+//                        navigation.getMenu().findItem(R.id.navigation_1).setChecked(true);
+//                        break;
+//                    case 1:
+//                        navigation.getMenu().findItem(R.id.navigation_3).setChecked(true);
+//                        break;
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//            }
+//        });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_1:
-                    mViewPager.setCurrentItem(0);
-                    return true;
-                case R.id.navigation_3:
-                    mViewPager.setCurrentItem(1);
-                    return true;
-            }
-            return false;
-        }
-
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_1:
+//                    mViewPager.setCurrentItem(0);
+//                    return true;
+//                case R.id.navigation_3:
+//                    mViewPager.setCurrentItem(1);
+//                    return true;
+//            }
+//            return false;
+//        }
+//
+//    };
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // 按下键盘上返回按钮

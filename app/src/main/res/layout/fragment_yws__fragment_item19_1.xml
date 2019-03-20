@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="平台上有违章车辆和无违章车辆的占比统计"
+        android:textColor="#4573A7"
+        android:gravity="center"
+        android:textSize="28dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/chart_pie"
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center"
+            android:layout_height="240dp"/>
+        <LinearLayout
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="200dp"
+                android:layout_height="30dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:background="@drawable/biankuang">
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:background="#4573a7" />
+                <TextView
+                    android:layout_marginLeft="1dp"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:text="有违章"
+                    />
+
+                <Button
+                    android:layout_width="20dp"
+                    android:layout_height="15dp"
+                    android:layout_marginLeft="2dp"
+                    android:background="#AA4644" />
+                <TextView
+                    android:layout_marginRight="0dp"
+                    android:layout_marginLeft="1dp"
+                    android:layout_width="60dp"
+                    android:layout_height="20dp"
+                    android:text="无违章"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
