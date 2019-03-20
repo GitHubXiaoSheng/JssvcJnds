@@ -3,7 +3,6 @@ package com.app.trafficclient;
 import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -12,7 +11,6 @@ import android.support.v4.widget.SlidingPaneLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -122,8 +120,8 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码19_数据分析2",
                 "模块代码20_个人中心2",
                 "模块代码21_红绿灯管理3",
-                "模块代码22_车辆ETC账户管理1",
-                "模块代码23_车辆ETC账户管理2",
+                "模块代码22_车辆ETC账户管理功能",
+                "模块代码23_车辆ETC账户告警功能",
                 "模块代码24_生活助手2",
                 "模块代码25_路况查询",
                 "模块代码26_数据分析2",
@@ -300,48 +298,48 @@ public class MainActivity extends AppCompatActivity {
 
         navigation = (BottomNavigationView) findViewById(R.id.navigation);
         /*给底部导航栏菜单项添加点击事件*/
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                switch (position) {
-                    case 0:
-                        navigation.getMenu().findItem(R.id.navigation_1).setChecked(true);
-                        break;
-                    case 1:
-                        navigation.getMenu().findItem(R.id.navigation_3).setChecked(true);
-                        break;
-                }
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-            }
-        });
+//        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+//        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//            }
+//
+//            @Override
+//            public void onPageSelected(int position) {
+//                switch (position) {
+//                    case 0:
+//                        navigation.getMenu().findItem(R.id.navigation_1).setChecked(true);
+//                        break;
+//                    case 1:
+//                        navigation.getMenu().findItem(R.id.navigation_3).setChecked(true);
+//                        break;
+//                }
+//
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//            }
+//        });
     }
 
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_1:
-                    mViewPager.setCurrentItem(0);
-                    return true;
-                case R.id.navigation_3:
-                    mViewPager.setCurrentItem(1);
-                    return true;
-            }
-            return false;
-        }
-
-    };
+//    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+//            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+//
+//        @Override
+//        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//            switch (item.getItemId()) {
+//                case R.id.navigation_1:
+//                    mViewPager.setCurrentItem(0);
+//                    return true;
+//                case R.id.navigation_3:
+//                    mViewPager.setCurrentItem(1);
+//                    return true;
+//            }
+//            return false;
+//        }
+//
+//    };
 
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         // 按下键盘上返回按钮
