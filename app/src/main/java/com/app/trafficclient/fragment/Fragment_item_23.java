@@ -16,6 +16,7 @@ public class Fragment_item_23 extends Fragment {
     private TextView tv_show_fazhi;
     private EditText edt_config_fazhi;
     private Button btn_config;
+    private TextView textView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
