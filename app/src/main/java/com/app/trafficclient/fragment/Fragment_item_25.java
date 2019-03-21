@@ -79,10 +79,10 @@ public class Fragment_item_25 extends Fragment {
                         textView_1.setText("拥挤");
                         textView_1_yanse.setBackgroundColor(Color.parseColor("#ffff01"));
                     } else if (daolu == 4) {
-                        textView_1.setText("堵塞");
+                        textView_1.setText("堵塞   ");
                         textView_1_yanse.setBackgroundColor(Color.parseColor("#ff0103"));
                     } else if (daolu == 5) {
-                        textView_1.setText("爆表");
+                        textView_1.setText("爆表   ");
                         textView_1_yanse.setBackgroundColor(Color.parseColor("#4c060e"));
                     }
                 } catch (JSONException e) {

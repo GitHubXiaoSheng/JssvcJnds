@@ -93,8 +93,8 @@ public class Fragment_item_24 extends Fragment {
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float v, AxisBase axisBase) {
-//                Log.d(TAG, "getFormattedValue: v="+v);
-                return getDate()[(int)v-1];
+                Log.d(TAG, "getFormattedValue: v="+v);
+                return getDate().get((int)v-1%6);
             }
         });
 
@@ -136,30 +136,30 @@ public class Fragment_item_24 extends Fragment {
     }
 
 
-    private String[] getDate(){
+    private List<String> getDate(){
         SimpleDateFormat format = new SimpleDateFormat("E");
-        String[] xValue = new String[0];
+        List<String> xValue  = new ArrayList<>();
         switch (format.format(new Date(System.currentTimeMillis()))) {
             case "周一":
-                xValue = new String[]{"昨天","今天","明天","周三","周四","周五"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周二":
-                xValue = new String[]{"昨天","今天","明天","周四","周五","周六"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周三":
-                xValue = new String[]{"昨天","今天","明天","周五","周六","周日"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周四":
-                xValue = new String[]{"昨天","今天","明天","周六","周日","周一"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周五":
-                xValue = new String[]{"昨天","今天","明天","周日","周一","周二"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周六":
-                xValue = new String[]{"昨天","今天","明天","周一","周二","周三"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             case "周日":
-                xValue = new String[]{"昨天","今天","明天","周二","周三","周四"};
+                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
                 break;
             default:
                 break;
