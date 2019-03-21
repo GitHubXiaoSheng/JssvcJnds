@@ -1,14 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.Fragment_item_26">
-
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/frag26_data_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="@dimen/frag11_textsize"
+        android:textColor="#000"
+        android:text="平台上有无“重复违章记录的车辆”的占比统计"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/frag26_data_layout1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="visible"
+        android:orientation="vertical">
+        <com.github.mikephil.charting.charts.PieChart
+            android:id="@+id/frag26_data_piechart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:padding="10dp"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="#4572A7"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/frag26data_left_legend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="无重复违章"
+                android:textColor="#4572A7"
+                android:textSize="20sp"
+                android:layout_marginRight="30dp"
+                />
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:background="#AA4643"
+                android:layout_marginRight="10dp"/>
+            <TextView
+                android:id="@+id/frag26data_righ_legend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="有重复违章"
+                android:textColor="#4572A7"
+                android:textSize="20sp"
+                />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/frag26_data_layout2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <com.github.mikephil.charting.charts.HorizontalBarChart
+            android:id="@+id/frag26_data_horizontalBarChart"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_margin="15dp"
+        android:gravity="center">
+        <TextView
+            android:id="@+id/frag26_data_index1_tv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textSize="@dimen/frag11_textsize"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_marginRight="10dp"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/frag26_data_index2_tv"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:textSize="@dimen/frag11_textsize"
+            android:gravity="center"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_marginRight="10dp"
+            android:textColor="#000"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
