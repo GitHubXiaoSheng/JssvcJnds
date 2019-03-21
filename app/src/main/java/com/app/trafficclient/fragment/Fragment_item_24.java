@@ -93,8 +93,8 @@ public class Fragment_item_24 extends Fragment {
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float v, AxisBase axisBase) {
-                Log.d(TAG, "getFormattedValue: v="+v);
-                return getDate().get((int)v-1%6);
+//                Log.d(TAG, "getFormattedValue: v="+v);
+                return getDate().get((int)v-1);
             }
         });
 
@@ -138,28 +138,63 @@ public class Fragment_item_24 extends Fragment {
 
     private List<String> getDate(){
         SimpleDateFormat format = new SimpleDateFormat("E");
-        List<String> xValue  = new ArrayList<>();
+        List<String> xValue = new ArrayList<>();
         switch (format.format(new Date(System.currentTimeMillis()))) {
             case "周一":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周三");
+                xValue.add("周四");
+                xValue.add("周五");
                 break;
             case "周二":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周四");
+                xValue.add("周五");
+                xValue.add("周六");
                 break;
             case "周三":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周五");
+                xValue.add("周六");
+                xValue.add("周日");
                 break;
             case "周四":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周六");
+                xValue.add("周日");
+                xValue.add("周一");
                 break;
             case "周五":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周日");
+                xValue.add("周一");
+                xValue.add("周二");
                 break;
             case "周六":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周日");
+                xValue.add("周一");
+                xValue.add("周二");
                 break;
             case "周日":
-                xValue.add("\"昨天\",\"今天\",\"明天\",\"周三\",\"周四\",\"周五\"");
+                xValue.add("昨天");
+                xValue.add("今天");
+                xValue.add("明天");
+                xValue.add("周一");
+                xValue.add("周二");
+                xValue.add("周三");
                 break;
             default:
                 break;
