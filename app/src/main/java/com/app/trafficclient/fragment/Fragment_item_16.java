@@ -30,8 +30,8 @@ import com.app.trafficclient.MainActivity;
 import com.app.trafficclient.MyApplication;
 import com.app.trafficclient.MySQLiteOpenHelper;
 import com.app.trafficclient.R;
-import com.app.trafficclient.adapter.Frag16_Adapter;
-import com.app.trafficclient.entry.Frag16_entry;
+import com.app.trafficclient.adapter.ZL_Frag16_Adapter;
+import com.app.trafficclient.entry.ZL_Frag16_entry;
 import com.app.trafficclient.usebean.GetUserInfo;
 import com.app.trafficclient.usebean.ZL_Balance;
 import com.app.trafficclient.util.HttpRequest;
@@ -73,8 +73,8 @@ public class Fragment_item_16 extends Fragment {
     private TextView tipsTv;
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
-    private List<Frag16_entry> entryList;
-    private Frag16_Adapter adapter;
+    private List<ZL_Frag16_entry> entryList;
+    private ZL_Frag16_Adapter adapter;
     private MySQLiteOpenHelper helper;
     private SQLiteDatabase db;
 
@@ -121,7 +121,7 @@ public class Fragment_item_16 extends Fragment {
         manager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(manager);
         entryList = new ArrayList<>();
-        adapter = new Frag16_Adapter(getContext(),entryList);
+        adapter = new ZL_Frag16_Adapter(getContext(),entryList);
         recyclerView.setAdapter(adapter);
 
         //阀值设置
@@ -207,16 +207,16 @@ public class Fragment_item_16 extends Fragment {
             if(cursor.moveToFirst()){
                 do {
                     sunAmount += cursor.getInt(cursor.getColumnIndex("jine"));
-                    entryList.add(new Frag16_entry(cursor.getString(cursor.getColumnIndex("time")),
+                    entryList.add(new ZL_Frag16_entry(cursor.getString(cursor.getColumnIndex("time")),
                             cursor.getString(cursor.getColumnIndex("caozuoren")),
                             String.valueOf(cursor.getInt(cursor.getColumnIndex("chehao"))),
                             String.valueOf(cursor.getInt(cursor.getColumnIndex("jine"))),
                             "2420"));
                 } while (cursor.moveToNext());
             }
-            Collections.sort(entryList, new Comparator<Frag16_entry>() {
+            Collections.sort(entryList, new Comparator<ZL_Frag16_entry>() {
                 @Override
-                public int compare(Frag16_entry max, Frag16_entry min) {
+                public int compare(ZL_Frag16_entry max, ZL_Frag16_entry min) {
                     return min.getTime().compareTo(max.getTime());
                 }
             });
