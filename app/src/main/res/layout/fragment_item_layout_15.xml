@@ -22,7 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
         <com.github.mikephil.charting.charts.PieChart
             android:id="@+id/frag15_data_piechart"
