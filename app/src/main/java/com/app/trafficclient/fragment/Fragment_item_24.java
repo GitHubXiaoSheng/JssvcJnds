@@ -90,11 +90,19 @@ public class Fragment_item_24 extends Fragment {
         xAxis.setAxisMaximum(6.5f);
         xAxis.setLabelCount(6);
         xAxis.setTextColor(Color.parseColor("#4f5fBB"));
+        final List<String> xValue = new ArrayList<>();
+        xValue.add("昨天");
+        xValue.add("今天");
+        xValue.add("明天");
+        xValue.add("周三");
+        xValue.add("周四");
+        xValue.add("周五");
         xAxis.setValueFormatter(new IAxisValueFormatter() {
             @Override
             public String getFormattedValue(float v, AxisBase axisBase) {
-//                Log.d(TAG, "getFormattedValue: v="+v);
-                return getDate().get((int)v-1);
+                Log.d(TAG, "getFormattedValue: v="+v);
+                return xValue.get((int)v-1);
+//                return String.valueOf(v);
             }
         });
 
@@ -138,6 +146,7 @@ public class Fragment_item_24 extends Fragment {
 
     private List<String> getDate(){
         SimpleDateFormat format = new SimpleDateFormat("E");
+        Log.d(TAG, "getDate: E="+format.format(new Date(System.currentTimeMillis())));
         List<String> xValue = new ArrayList<>();
         switch (format.format(new Date(System.currentTimeMillis()))) {
             case "周一":
