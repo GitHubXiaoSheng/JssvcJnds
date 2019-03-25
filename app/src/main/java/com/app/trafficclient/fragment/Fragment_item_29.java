@@ -6,6 +6,8 @@ import android.app.NotificationManager;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +15,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.android.volley.Response;
 import com.app.trafficclient.R;
-import com.app.trafficclient.util.HttpRequest;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.AxisBase;
 import com.github.mikephil.charting.components.XAxis;
@@ -25,17 +25,11 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.formatter.IAxisValueFormatter;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import static android.os.Build.VERSION_CODES.N;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -238,8 +232,9 @@ public class Fragment_item_29 extends Fragment implements View.OnClickListener {
 //            }
 //        },null);
 //    }
+    private Timer timer;
     private void shuanxin(){
-        Timer timer=new Timer();
+        timer=new Timer();
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
@@ -247,8 +242,30 @@ public class Fragment_item_29 extends Fragment implements View.OnClickListener {
                 for (int i=0;i<5;i++){
                     pm2Entry.add(new Entry(i,new Random().nextInt(100*3)));
                 }
-                fangfa();
+                Message message = new Message();
+                message.what = 1;
+                handler.sendMessage(message);
             }
         },1,3000);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        timer.cancel();
+    }
+
+    private Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    fangfa();
+                    break;
+                default:
+                    break;
+            }
+        }
+    };
 }
