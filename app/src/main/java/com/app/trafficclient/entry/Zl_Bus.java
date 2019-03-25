@@ -1,10 +1,10 @@
 package com.app.trafficclient.entry;
 
-public class Bus {
+public class Zl_Bus {
     private String busNum;
     private String distance;
 
-    public Bus(String busNum, String distance) {
+    public Zl_Bus(String busNum, String distance) {
         this.busNum = busNum;
         this.distance = distance;
     }

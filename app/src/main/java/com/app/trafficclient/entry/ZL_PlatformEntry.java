@@ -2,15 +2,15 @@ package com.app.trafficclient.entry;
 
 import java.util.List;
 
-public class PlatformEntry {
+public class ZL_PlatformEntry {
     private boolean isOpen;
     private String platformNum;
-    private List<Bus> busList;
+    private List<Zl_Bus> zlBusList;
 
-    public PlatformEntry(boolean isOpen, String platformNum, List<Bus> busList) {
+    public ZL_PlatformEntry(boolean isOpen, String platformNum, List<Zl_Bus> zlBusList) {
         this.isOpen = isOpen;
         this.platformNum = platformNum;
-        this.busList = busList;
+        this.zlBusList = zlBusList;
     }
 
     public boolean isOpen() {
@@ -21,12 +21,12 @@ public class PlatformEntry {
         isOpen = open;
     }
 
-    public List<Bus> getBusList() {
-        return busList;
+    public List<Zl_Bus> getZlBusList() {
+        return zlBusList;
     }
 
-    public void setBusList(List<Bus> busList) {
-        this.busList = busList;
+    public void setZlBusList(List<Zl_Bus> zlBusList) {
+        this.zlBusList = zlBusList;
     }
 
     public String getPlatformNum() {

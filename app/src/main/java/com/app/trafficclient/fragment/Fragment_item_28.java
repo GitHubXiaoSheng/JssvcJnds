@@ -11,9 +11,9 @@ import android.widget.ExpandableListView;
 import android.widget.ImageView;
 
 import com.app.trafficclient.R;
-import com.app.trafficclient.entry.Bus;
-import com.app.trafficclient.entry.Frag28_Adapter;
-import com.app.trafficclient.entry.PlatformEntry;
+import com.app.trafficclient.entry.Zl_Bus;
+import com.app.trafficclient.adapter.ZL_Frag28_Adapter;
+import com.app.trafficclient.entry.ZL_PlatformEntry;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,9 +25,9 @@ public class Fragment_item_28 extends Fragment {
     private String TAG = "TAG";
     private View view;
     private ExpandableListView listView;
-    private Frag28_Adapter adapter;
-    private List<PlatformEntry> entryList;
-    private List<Bus> busList;
+    private ZL_Frag28_Adapter adapter;
+    private List<ZL_PlatformEntry> entryList;
+    private List<Zl_Bus> zlBusList;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
@@ -39,16 +39,16 @@ public class Fragment_item_28 extends Fragment {
 
     private void initView(){
         entryList = new ArrayList<>();
-        busList = new ArrayList<>();
+        zlBusList = new ArrayList<>();
         listView = (ExpandableListView) view.findViewById(R.id.frag28_expandlist);
         for (int i=0;i<2 ;i++) {
             for (int j=0;j<(int)(Math.random()*10) ;j++) {
-                Bus bus = new Bus(String.valueOf(i+1)+"号站台",String.valueOf((int)(Math.random()*1000+100))+"米");
-                busList.add(bus);
+                Zl_Bus zlBus = new Zl_Bus(String.valueOf(i+1)+"号站台",String.valueOf((int)(Math.random()*1000+100))+"米");
+                zlBusList.add(zlBus);
             }
-            entryList.add(new PlatformEntry(true,String.valueOf(i+1)+"号站台",busList));
+            entryList.add(new ZL_PlatformEntry(true,String.valueOf(i+1)+"号站台", zlBusList));
         }
-        adapter = new Frag28_Adapter(getContext(), entryList);
+        adapter = new ZL_Frag28_Adapter(getContext(), entryList);
         listView.setAdapter(adapter);
         listView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override

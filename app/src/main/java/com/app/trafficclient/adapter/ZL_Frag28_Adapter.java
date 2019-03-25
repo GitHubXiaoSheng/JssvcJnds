@@ -1,4 +1,4 @@
-package com.app.trafficclient.entry;
+package com.app.trafficclient.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,15 +8,17 @@ import android.widget.BaseExpandableListAdapter;
 import android.widget.TextView;
 
 import com.app.trafficclient.R;
+import com.app.trafficclient.entry.ZL_PlatformEntry;
+import com.app.trafficclient.entry.Zl_Bus;
 
 import java.util.List;
 
 
-public class Frag28_Adapter extends BaseExpandableListAdapter {
+public class ZL_Frag28_Adapter extends BaseExpandableListAdapter {
     private Context context;
-    private List<PlatformEntry> entryList;
+    private List<ZL_PlatformEntry> entryList;
 
-    public Frag28_Adapter(Context context, List<PlatformEntry> entryList) {
+    public ZL_Frag28_Adapter(Context context, List<ZL_PlatformEntry> entryList) {
         this.context = context;
         this.entryList = entryList;
     }
@@ -28,7 +30,7 @@ public class Frag28_Adapter extends BaseExpandableListAdapter {
 
     @Override
     public int getChildrenCount(int i) {
-        return entryList.get(i).getBusList().size();
+        return entryList.get(i).getZlBusList().size();
     }
 
     @Override
@@ -38,7 +40,7 @@ public class Frag28_Adapter extends BaseExpandableListAdapter {
 
     @Override
     public Object getChild(int i, int i1) {
-        return entryList.get(i).getBusList().get(i1);
+        return entryList.get(i).getZlBusList().get(i1);
     }
 
     @Override
@@ -63,7 +65,7 @@ public class Frag28_Adapter extends BaseExpandableListAdapter {
             TextView textView = (TextView) view.findViewById(R.id.frag28item_1_platform_tv);
 
 //            Log.d("TAG", "getGroupView: b="+b);
-            PlatformEntry entry = entryList.get(i);
+            ZL_PlatformEntry entry = entryList.get(i);
             textView.setText(entry.getPlatformNum());
         }
         return view;
@@ -75,9 +77,9 @@ public class Frag28_Adapter extends BaseExpandableListAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.frag28_item_2,viewGroup,false);
             TextView busNum = (TextView) view.findViewById(R.id.frag28item_2_busnum_tv);
             TextView busInfo = (TextView) view.findViewById(R.id.frag28item_2_businfo_tv);
-            Bus bus = entryList.get(1).getBusList().get(i1);
-            busNum.setText(bus.getBusNum());
-            busInfo.setText(bus.getDistance());
+            Zl_Bus zlBus = entryList.get(1).getZlBusList().get(i1);
+            busNum.setText(zlBus.getBusNum());
+            busInfo.setText(zlBus.getDistance());
 
         }
         return view;
