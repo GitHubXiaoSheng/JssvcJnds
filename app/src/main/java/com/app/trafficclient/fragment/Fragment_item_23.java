@@ -35,8 +35,8 @@ public class Fragment_item_23 extends Fragment {
         btn_config=getActivity().findViewById(R.id.btn_config);
 
 
-        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
-        save_yue=sharedPreferences.getString("yue","");
+//        sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getContext());
+//        save_yue=sharedPreferences.getString("yue","");
 
         btn_config.setOnClickListener(new View.OnClickListener() {
             @Override
