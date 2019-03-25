@@ -21,7 +21,8 @@
         <ImageView
             android:layout_width="100dp"
             android:layout_height="match_parent"
-            android:src="@drawable/zzj_laba"/>
+            android:src="@drawable/zzj_laba"
+            android:layout_margin="20dp"/>
 
         <TextView
             android:layout_width="match_parent"
