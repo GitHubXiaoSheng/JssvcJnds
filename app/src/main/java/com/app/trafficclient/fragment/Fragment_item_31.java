@@ -79,7 +79,7 @@ public class Fragment_item_31 extends Fragment implements View.OnClickListener {
                     editText_content.setText("");
                     editText_tel.setText("");
                 }else {
-                    Toast.makeText(getContext(),"反馈信息不能为空",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(),"反馈的信息不能为空",Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
