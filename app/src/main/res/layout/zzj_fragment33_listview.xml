@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal"
+    android:background="@drawable/zzj_edit_biankuang">
+
+    <TextView
+        android:id="@+id/zzj_fragment33_listView_item_1"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:background="@drawable/zzj_background_1" />
+
+    <TextView
+        android:id="@+id/zzj_fragment33_listView_item_2"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:gravity="center|left"
+        android:layout_marginLeft="50dp"
+        android:textSize="30dp"/>
+
+    <TextView
+        android:id="@+id/zzj_fragment33_listView_item_3"
+        android:layout_width="70dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="30dp"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/zzj_jiantou_right"/>
+
+</LinearLayout>

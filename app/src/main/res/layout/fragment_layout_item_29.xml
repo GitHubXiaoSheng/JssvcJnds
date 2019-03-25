@@ -1,32 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:id="@+id/tv_show_zhishu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        android:text="pM2.5指数"/>
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-   <com.github.mikephil.charting.charts.LineChart
-       android:id="@+id/line_chart"
-       android:layout_width="match_parent"
-       android:layout_height="match_parent"></com.github.mikephil.charting.charts.LineChart>
-        <LinearLayout
-            android:id="@+id/huadongbuju"
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></LinearLayout>
-
-    </FrameLayout>
-    
 
 
 </LinearLayout>
