@@ -43,6 +43,11 @@
             android:name=".login.RegActivity"
             android:label="@string/app_title"
             android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.Zzj_yijianActivity"
+            android:label="@string/app_title"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
