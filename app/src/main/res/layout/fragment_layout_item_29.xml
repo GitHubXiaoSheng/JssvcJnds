@@ -1,8 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+<TextView
+    android:id="@+id/tv_show_zhishu"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:textSize="28dp"
+    android:textStyle="bold"
+    android:text="pM2.5指数"/>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/line_chart"
+        android:layout_width="550dp"
+        android:layout_gravity="center|top"
+        android:layout_height="350dp"></com.github.mikephil.charting.charts.LineChart>
+    <LinearLayout
+        android:id="@+id/huadongbuju"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"/>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/yuan_pm2"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/yuan_wendu"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <TextView
+            android:id="@+id/yuan_guangzhao"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/zl_frag6_cboder_2"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
 
+</FrameLayout>
 
 </LinearLayout>
+
+
+
