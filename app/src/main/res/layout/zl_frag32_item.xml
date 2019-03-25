@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/boder">
+    <TextView
+        android:id="@+id/frag32_item_metroname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="30dp"
+        android:text="地铁查询"
+        android:textSize="@dimen/frag16_big"
+        android:textColor="#000"/>
+    <TextView
+        android:layout_width="50dp"
+        android:layout_height="80dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/dayu"
+        android:textSize="@dimen/frag11_textsize"
+        android:layout_marginRight="30dp"
+        android:textColor="#000"/>
+</RelativeLayout>

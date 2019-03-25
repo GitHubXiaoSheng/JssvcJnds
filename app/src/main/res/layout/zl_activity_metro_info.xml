@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragment.Fragment_item_32">
-
+    tools:context=".activity.ZL_MetroInfoActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -14,24 +14,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="地铁查询"
+            android:text="地铁规划"
             android:textSize="@dimen/frag16_big"
             android:textColor="#fff"/>
         <TextView
-            android:id="@+id/frag32_metroplan_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/metro_back_tv"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
             android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:text="地铁规划"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/zl_left"
             android:textSize="@dimen/frag11_textsize"
-            android:layout_marginRight="30dp"
+            android:layout_marginLeft="20dp"
             android:textColor="#fff"/>
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/frag32_recycler"
+    <ImageView
+        android:id="@+id/metro_img"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"/>
+
 </LinearLayout>
