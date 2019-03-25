@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activity.YWS_weizhangchaxun"></activity>
+        <activity android:name=".activity.ZL_MetroInfoActivity"></activity>
+        <activity android:name=".activity.YWS_weizhangchaxun" />
 
         <receiver
             android:name=".MyReceiver"
@@ -41,6 +42,11 @@
             android:label="@string/app_title" />
         <activity
             android:name=".login.RegActivity"
+            android:label="@string/app_title"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".activity.Zzj_yijianActivity"
             android:label="@string/app_title"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>

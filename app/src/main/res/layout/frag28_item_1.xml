@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/frag28item_1_list_img"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/dayu"
+        android:layout_marginRight="10dp"/>
+
+    <TextView
+        android:id="@+id/frag28item_1_platform_tv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:text="一号站台"
+        android:textSize="@dimen/frag11_textsize"
+        android:textColor="#000"
+        android:layout_margin="5dp"/>
+</LinearLayout>
