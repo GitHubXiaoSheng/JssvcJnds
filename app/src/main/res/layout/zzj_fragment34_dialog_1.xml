@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="300dp"
+    android:layout_marginRight="300dp"
+    android:layout_marginTop="150dp"
+    android:layout_marginBottom="150dp"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#00bfff">
+
+        <ImageView
+            android:id="@+id/zzj_fragment34_dialog1_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/back"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="ETC充值"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            android:text="车牌号："/>
+
+        <EditText
+            android:id="@+id/zzj_fragment34_dialog1_chehaoEditView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/zzj_edit_biankuang"
+            android:layout_marginRight="200dp"
+            android:layout_marginTop="5dp"
+            android:hint="车号1-4"
+            android:maxLength="1"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginLeft="100dp"
+            android:text="充值金额："/>
+
+        <EditText
+            android:id="@+id/zzj_fragment34_dialog1_chongzhiEditView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/zzj_edit_biankuang"
+            android:layout_marginRight="200dp"
+            android:layout_marginTop="5dp"
+            android:hint="金额0-999"
+            android:maxLength="3"
+            android:layout_marginBottom="5dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/zzj_fragment34_dialog1_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="250dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/zzj_background_1"
+        android:text="充值"/>
+
+</LinearLayout>
