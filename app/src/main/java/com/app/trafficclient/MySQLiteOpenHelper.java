@@ -81,6 +81,14 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "tel Integer,"
             + "time Integer);";
 
+    public static final String CHONGZHI_JILU2 = "create table chongzhijilu("
+            + "id Integer primary key autoincrement,"
+            + "chehao Integer,"
+            + "chepai Integer,"
+            + "jine text,"
+            + "time text)";
+
+
     public MySQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
         contextId = context;
@@ -99,6 +107,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TONGZHI_PM25);
         db.execSQL(TONGZHI_DAOLU);
         db.execSQL(MY_YIJIAN);
+        db.execSQL(CHONGZHI_JILU2);
     }
 
     @Override
