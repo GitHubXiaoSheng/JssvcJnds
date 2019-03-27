@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#00bfff">
+
+        <ImageView
+            android:id="@+id/zzj_back2_Image"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/back"
+            android:layout_margin="3dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_marginRight="40dp"
+            android:textColor="#ffffff"
+            android:textStyle="bold"
+            android:text="定制班车"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <CalendarView
+                android:id="@+id/zzj_f_6_calendarView"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:background="@drawable/zzj_background_3"
+            android:paddingLeft="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:gravity="left|center"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:text="选择日期:"/>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/zzj_f_6_selectRiqi_TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </ScrollView>
+
+            <Button
+                android:id="@+id/zzj_f_6_2_Next_Button"
+                android:layout_width="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_margin="30dp"
+                android:layout_height="40dp"
+                android:background="#00bfff"
+                android:text="下一步"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
