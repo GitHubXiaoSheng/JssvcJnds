@@ -1,14 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".fragment.Fragment_item_37">
 
-    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/frag37_title_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/frag16_big"
+        android:textColor="#000"
+        android:textStyle="bold"
+        android:layout_marginLeft="30dp"
+        android:text="生成付款二维码"/>
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="1dp"
+        android:background="#AAA"/>
 
-</FrameLayout>
+    <LinearLayout
+        android:id="@+id/frag37_generate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/frag16_big"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:text="车辆编号："/>
+            <Spinner
+                android:id="@+id/frag37_spinner"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:entries="@array/frag37_spinner"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/frag16_big"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:text="付费金额："/>
+            <EditText
+                android:id="@+id/frag37_amount_et"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="number"
+                android:hint="1`999"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/frag16_big"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:text="元"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/frag16_big"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:text="二维码更新周期："/>
+            <EditText
+                android:id="@+id/frag37_time_et"
+                android:layout_width="200dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:inputType="number"
+                android:hint="1`999"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/frag16_big"
+                android:textColor="#000"
+                android:textStyle="bold"
+                android:layout_marginLeft="30dp"
+                android:text="秒"/>
+        </LinearLayout>
+        <Button
+            android:id="@+id/frag37_generate_btn"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="生成"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#fff"
+            android:textSize="@dimen/frag11_textsize"
+            android:background="#09c"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/frag37_qrcode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/frag37_qrcode_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/frag16_big"
+            android:visibility="invisible"
+            android:textColor="#000"
+            android:text="生成付款二维码"/>
+        <ImageView
+            android:id="@+id/frag37_qrcode_img"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
