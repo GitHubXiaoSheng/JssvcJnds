@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="生成"
-            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="300dp"
             android:textColor="#fff"
             android:textSize="@dimen/frag11_textsize"
             android:background="#09c"/>

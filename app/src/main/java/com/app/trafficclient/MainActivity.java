@@ -53,6 +53,13 @@ import com.app.trafficclient.fragment.Fragment_item_37;
 import com.app.trafficclient.fragment.Fragment_item_38;
 import com.app.trafficclient.fragment.Fragment_item_39;
 import com.app.trafficclient.fragment.Fragment_item_4;
+import com.app.trafficclient.fragment.Fragment_item_40;
+import com.app.trafficclient.fragment.Fragment_item_41;
+import com.app.trafficclient.fragment.Fragment_item_42;
+import com.app.trafficclient.fragment.Fragment_item_43;
+import com.app.trafficclient.fragment.Fragment_item_44;
+import com.app.trafficclient.fragment.Fragment_item_45;
+import com.app.trafficclient.fragment.Fragment_item_46;
 import com.app.trafficclient.fragment.Fragment_item_5;
 import com.app.trafficclient.fragment.Fragment_item_6;
 import com.app.trafficclient.fragment.Fragment_item_7;
@@ -150,10 +157,24 @@ public class MainActivity extends AppCompatActivity {
                 "模块代码37_二维码支付",
                 "模块代码38_定制班车",
                 "模块代码39_新闻客户端",
+                "模块代码40_停车场IC充值",
+                "模块代码41_停车场车辆收费",
+                "模块代码42_停车场信息管理",
+                "模块代码43_小车充值",
+                "模块代码44_用户登录注册",
+                "模块代码45_我的座驾",
+                "模块代码46_我的交通",
                 "用户退出"
         };
 
         int[] actionImages = new int[]{
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
+                R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
                 R.drawable.btn_l_grid,
@@ -332,7 +353,28 @@ public class MainActivity extends AppCompatActivity {
                     case 38:
                         getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_39()).commit();
                         break;
-                    case 39:    //退出
+                    case 39:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_40()).commit();
+                        break;
+                    case 40:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_41()).commit();
+                        break;
+                    case 41:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_42()).commit();
+                        break;
+                    case 42:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_43()).commit();
+                        break;
+                    case 43:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_44()).commit();
+                        break;
+                    case 44:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_45()).commit();
+                        break;
+                    case 45:
+                        getSupportFragmentManager().beginTransaction().replace(R.id.main_fraghome,new Fragment_item_46()).commit();
+                        break;
+                    case 46:    //退出
                         exitAppDialog();
                         break;
                     default:

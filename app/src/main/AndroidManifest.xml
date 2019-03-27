@@ -14,8 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".activity.ZL_Frag37QrCodeActivity"></activity>
+        <activity android:name=".activity.Fragment38_Activity4"></activity>
+        <activity android:name=".activity.Fragment38_Activity3" />
+        <activity android:name=".activity.Fragment38_Activity2" />
+        <activity android:name=".activity.Fragment38_Activity1" />
         <activity android:name=".activity.ZL_SpotInfoActivity" />
+        <activity android:name=".activity.ZL_Frag37QrCodeActivity"></activity>
+        <!--<activity android:name=".activity.ZL_SpotInfoActivity" />-->
         <activity android:name=".activity.ZL_MetroInfoActivity" />
         <activity android:name=".activity.YWS_weizhangchaxun" />
 
