@@ -88,6 +88,11 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             + "jine text,"
             + "time text)";
 
+    public static final String CHONGZHI_JILU3 = "create table chongzhidejilu("
+            + "id Integer primary key autoincrement,"
+            + "chehao Integer,"
+            + "jine Integer,"
+            + "shijian text);";
 
     public MySQLiteOpenHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -108,6 +113,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         db.execSQL(TONGZHI_DAOLU);
         db.execSQL(MY_YIJIAN);
         db.execSQL(CHONGZHI_JILU2);
+        db.execSQL(CHONGZHI_JILU3);
     }
 
     @Override

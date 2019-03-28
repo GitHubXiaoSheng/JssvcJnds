@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+        <LinearLayout
+            android:id="@+id/zzj_LinearLayout_1_f_7_1"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="1号小车"/>
+
+            <TextView
+                android:id="@+id/zzj_1_hao_che"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/zzj_1_hao_che_yuan"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_LinearLayout_2_f_7_1"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="2号小车"/>
+
+            <TextView
+                android:id="@+id/zzj_2_hao_che"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/zzj_2_hao_che_yuan"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <LinearLayout
+            android:id="@+id/zzj_LinearLayout_3_f_7_1"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="3号小车"/>
+
+            <TextView
+                android:id="@+id/zzj_3_hao_che"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/zzj_3_hao_che_yuan"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/zzj_LinearLayout_4_f_7_1"
+            android:layout_width="0dp"
+            android:layout_height="110dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="100dp"
+            android:layout_marginLeft="50dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="4号小车"/>
+
+            <TextView
+                android:id="@+id/zzj_4_hao_che"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:id="@+id/zzj_4_hao_che_yuan"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:gravity="center"
+                android:background="@drawable/zzj_background_2"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
