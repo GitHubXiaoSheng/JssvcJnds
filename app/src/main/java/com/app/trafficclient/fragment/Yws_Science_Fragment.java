@@ -1,13 +1,10 @@
 package com.app.trafficclient.fragment;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -49,9 +46,7 @@ private ListView science_listview;
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
-        scienceadapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,sciencelist);
+        scienceadapter=new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,sciencelist);
         science_listview.setAdapter(scienceadapter);
-
-
     }
 }
