@@ -1,14 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".fragment.Fragment_item_40">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <LinearLayout
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/zl_blue_boder">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@drawable/zl_blue_boder"
+            android:orientation="horizontal"
+            android:padding="8dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="#87EfDb"
+                android:text="IC 卡充值"
+                android:textStyle="bold"
+                android:textSize="@dimen/frag16_big"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:orientation="vertical"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="人员姓名："
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+                <TextView
+                    android:id="@+id/frag40_username_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="管理员"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="IC    卡号："
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+                <TextView
+                    android:id="@+id/frag40_cardnum_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12345"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="账户余额："
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+                <TextView
+                    android:id="@+id/frag40_balance_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="242.77"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="充值金额："
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:textSize="@dimen/frag16_big"/>
+                <EditText
+                    android:id="@+id/frag40_amount_et"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:hint="2"
+                    android:background="@drawable/zl_blue_boder"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:layout_marginRight="20dp"
+                    android:inputType="number"
+                    android:textSize="@dimen/frag11_textsize"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/zl_blue_boder"
+                    android:layout_marginRight="20dp"
+                    android:padding="8dp">
+                    <Button
+                        android:id="@+id/frag40_recharge_btn"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="充值"
+                        android:textColor="#000"
+                        android:background="#B7DFE9"
+                        android:textSize="@dimen/frag16_big"/>
+                </LinearLayout>
 
-</FrameLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/zl_blue_boder"
+                    android:layout_marginRight="20dp"
+                    android:padding="8dp">
+                    <Button
+                        android:id="@+id/frag40_cancel_btn"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="退出"
+                        android:textColor="#000"
+                        android:background="#B7DFE9"
+                        android:textSize="@dimen/frag16_big"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

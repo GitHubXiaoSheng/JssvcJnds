@@ -46,7 +46,7 @@ private ListView science_listview;
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
         sciencelist.add("中兴最新发展：已停止业务 向美申请展示");
-        scienceadapter=new ArrayAdapter(getContext(),android.R.layout.simple_list_item_1,sciencelist);
+        scienceadapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,sciencelist);
         science_listview.setAdapter(scienceadapter);
     }
 }

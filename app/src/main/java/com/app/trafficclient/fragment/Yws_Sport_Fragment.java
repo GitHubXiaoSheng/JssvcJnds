@@ -41,7 +41,5 @@ public class Yws_Sport_Fragment extends Fragment {
 
         scienceadapter=new ArrayAdapter<String>(getContext(),android.R.layout.simple_list_item_1,sciencelist);
         science_listview.setAdapter(scienceadapter);
-
-
     }
 }
